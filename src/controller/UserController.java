@@ -78,7 +78,7 @@ public class UserController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "INSERT INTO taikhoan(tk, email, mk, tinhtrang) VALUES(?, ?, ?, ?)";
@@ -119,7 +119,7 @@ public class UserController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "UPDATE taikhoan SET tk = ?, email = ?, mk = ?, tinhtrang = ? WHERE id = ?";
@@ -159,16 +159,13 @@ public class UserController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "DELETE FROM taikhoan WHERE id = ?";
             statement = connection.prepareCall(sql);
-
             statement.setInt(1, id);
-
             statement.execute();
-
         } catch (SQLException ex) {
             Logger.getLogger(UserController.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
@@ -199,15 +196,13 @@ public class UserController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "1234567");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT * FROM taikhoan WHERE tk LIKE ?";
             statement = connection.prepareCall(sql);
             statement.setString(1, tk + "%");
-
             ResultSet resultSet = statement.executeQuery();
-
             while (resultSet.next()) {
                 User user;
                 user = new User(resultSet.getInt("id"),

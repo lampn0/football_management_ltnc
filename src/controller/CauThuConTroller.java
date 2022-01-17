@@ -31,7 +31,7 @@ public class CauThuConTroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
                 String sql = "SELECT thongtincauthu.madoi, "
@@ -91,7 +91,7 @@ public class CauThuConTroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "INSERT INTO thongtincauthu(madoi, tencauthu, ngaysinh, soao, vitri) VALUES(?, ?, ?, ?, ?)";
@@ -133,7 +133,7 @@ public class CauThuConTroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "UPDATE thongtincauthu SET madoi = ?, tencauthu = ?, ngaysinh = ?, soao = ?, vitri = ? WHERE macauthu = ?";
@@ -175,7 +175,7 @@ public class CauThuConTroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "DELETE FROM thongtincauthu WHERE macauthu = ?";
@@ -215,7 +215,7 @@ public class CauThuConTroller {
 
         try {
             //Lấy tất cả dah sách 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT thongtincauthu.macauthu, "

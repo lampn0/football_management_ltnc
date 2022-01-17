@@ -32,7 +32,7 @@ public class ClLBController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT * FROM clb";
@@ -108,7 +108,7 @@ public class ClLBController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "INSERT INTO clb(tendoi, doitruong, HLV, socauthu) VALUES(?, ?, ?, ?)";
@@ -149,7 +149,7 @@ public class ClLBController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "UPDATE clb SET tendoi = ?, doitruong = ?, HLV = ? WHERE madoi = ?";
@@ -188,7 +188,7 @@ public class ClLBController {
 
         try {
             //Lấy tất cả danh sach doi
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             
@@ -249,7 +249,7 @@ public class ClLBController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT * FROM clb WHERE tendoi LIKE ?";

@@ -213,7 +213,7 @@ public class DangNhapFrm extends javax.swing.JFrame {
                     home.setVisible(true);
                     this.dispose();
                 } else {
-                    JOptionPane.showMessageDialog(rootPane, "Mật khẩu không đúng");
+                    JOptionPane.showMessageDialog(rootPane, "Mật khẩu không đúng !!");
                 }
             } else {
                 JOptionPane.showMessageDialog(rootPane, "Tài khoản không đúng");

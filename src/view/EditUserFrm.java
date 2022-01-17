@@ -230,9 +230,9 @@ public class EditUserFrm extends javax.swing.JDialog {
 
         if (isOK) {
             User user = new User(id, tinhtrang, tk, email, mk);
+            UserController.update(user);
             JOptionPane.showMessageDialog(rootPane,
                 "Bạn đã cập nhật tài khoản thành công");
-            UserController.update(user);
             this.dispose();
         }
     }//GEN-LAST:event_btnSaveActionPerformed

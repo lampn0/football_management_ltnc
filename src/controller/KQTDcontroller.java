@@ -32,7 +32,7 @@ public class KQTDcontroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT VD.mavongdau, "
@@ -107,7 +107,7 @@ public class KQTDcontroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT matran, tentran FROM trandau";
@@ -152,7 +152,7 @@ public class KQTDcontroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "INSERT INTO kqtd(matran, madoi1, madoi2, SVD, thoigian, banthang1, banthang2) VALUES(?, ?, ?, ?, ?, ?, ?)";
@@ -196,7 +196,7 @@ public class KQTDcontroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "UPDATE kqtd SET matran = ?, "
@@ -247,7 +247,7 @@ public class KQTDcontroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "DELETE FROM kqtd WHERE matran = ?";
@@ -286,7 +286,7 @@ public class KQTDcontroller {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT VD.mavongdau, "

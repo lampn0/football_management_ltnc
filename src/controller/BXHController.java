@@ -34,7 +34,7 @@ public class BXHController {
 
         try {
             //Lấy tất cả dah sách 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT vongdau.mavongdau, vongdau.tenvongdau, clb.madoi, clb.tendoi "
@@ -309,7 +309,7 @@ public class BXHController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "DELETE FROM bxh";
@@ -347,7 +347,7 @@ public class BXHController {
 
         try {
             //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT * FROM vongdau ORDER BY tenvongdau";
