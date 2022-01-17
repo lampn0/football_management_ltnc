@@ -4,12 +4,14 @@
  */
 package view;
 
+import controller.UserController;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author lampn
  */
 public class KhoiPhucMKFrm extends javax.swing.JFrame {
-
     /**
      * Creates new form KhoiPhucMKFrm
      */
@@ -119,6 +121,15 @@ public class KhoiPhucMKFrm extends javax.swing.JFrame {
 
     private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         // TODO add your handling code here:
+        QuenMK quenmk = new QuenMK();
+        if (String.valueOf(jPasswordField1.getPassword()).equals(String.valueOf(jPasswordField2.getPassword()))) {
+            quenmk.user1.setMK(String.valueOf(jPasswordField1.getPassword()));
+            UserController.update(quenmk.user1);
+            JOptionPane.showMessageDialog(rootPane,"Bạn đã cập nhật mật khẩu thành công");
+            this.dispose();
+        } else {
+            JOptionPane.showMessageDialog(rootPane,"Mật khẩu xác thực chưa đúng");
+        }
     }//GEN-LAST:event_btnXacNhanActionPerformed
 
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
@@ -126,7 +137,7 @@ public class KhoiPhucMKFrm extends javax.swing.JFrame {
         DangNhapFrm dangNhapFrm = new DangNhapFrm();
         dangNhapFrm.setTitle("Football League Management");
         dangNhapFrm.setVisible(true);
-
+        
         this.setVisible((false));
     }//GEN-LAST:event_btnCancelActionPerformed
 

@@ -68,9 +68,6 @@ public class HomeFrm extends javax.swing.JFrame {
         tableUserModel = (DefaultTableModel) jtbUser.getModel();
         
         ShowCLB();
-
-        //ShowCauThu();
-        
         showConboCLBData();
         ShowKQTD();
         ShowComboTDData();
@@ -81,7 +78,6 @@ public class HomeFrm extends javax.swing.JFrame {
         ShowBXH();
         
         ShowUser();
-
     }
 
     // Hiển thị danh sách CLB
@@ -100,28 +96,15 @@ public class HomeFrm extends javax.swing.JFrame {
 
     // Hiển thị danh sách cầu thủ
     public void ShowCauThu() {
-        
         CauthuList = CauThuConTroller.findAll();
         
         // Đưa số Row của table về 0
        tableCauThuModel.setRowCount(0);
-       
-       
-//            for (CLB clb : ClbList) {
-//                
-//                }
            
         CauthuList.forEach(cauthu -> {
-            
-          
-                
             tableCauThuModel.addRow(new Object[]{tableCauThuModel.getRowCount() + 1, cauthu.getTendoi(),
-                cauthu.getTencauthu(), cauthu.getNgaysinh(), cauthu.getSoao(), cauthu.getVitri()});
-   
-            
+            cauthu.getTencauthu(), cauthu.getNgaysinh(), cauthu.getSoao(), cauthu.getVitri()});
         });
-       
-       
     }
 
     public void ShowKQTD() {
@@ -145,13 +128,11 @@ public class HomeFrm extends javax.swing.JFrame {
         
         BXHList.forEach(bxh -> {
             System.out.println(bxh.getTenvong());
-            if(bxh.getTenvong().equals(cbVong.getSelectedItem().toString()))
-                {
-         
+            if(bxh.getTenvong().equals(cbVong.getSelectedItem().toString())) {
             tableBXHModel.addRow(new Object[]{bxh.getTenvong(), bxh.getVitri(), bxh.getTendoi(),
                 bxh.getSotran(), bxh.getSotrangthang(), bxh.getSobanthua(), 
                 bxh.getSotranhoa(), bxh.getSobanthang(), bxh.getSobanthua(), bxh.getHieuso(), bxh.getDiem()});
-                }
+            }
         });
         
     }
@@ -215,6 +196,7 @@ public class HomeFrm extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         jtfViTri = new javax.swing.JTextField();
         cbTenCLB = new javax.swing.JComboBox<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
         jScrollPane2 = new javax.swing.JScrollPane();
         jtbCauThu = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
@@ -629,23 +611,35 @@ public class HomeFrm extends javax.swing.JFrame {
             new String [] {
                 "STT", "Tên CLB", "Tên cầu thủ", "Ngày sinh", "Số áo", "Vị trí"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jtbCauThu.setColumnSelectionAllowed(true);
         jtbCauThu.setRowHeight(20);
         jScrollPane2.setViewportView(jtbCauThu);
+        jtbCauThu.getColumnModel().getSelectionModel().setSelectionMode(javax.swing.ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+
+        jScrollPane7.setViewportView(jScrollPane2);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane2)
+            .addComponent(jScrollPane7)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 176, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cầu thủ", jPanel6);
@@ -1972,6 +1966,7 @@ public class HomeFrm extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel jlbCLB1;

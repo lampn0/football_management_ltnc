@@ -14,7 +14,7 @@ import model.User;
  * @author lampn
  */
 public class QuenMK extends javax.swing.JFrame {
-    User user1 ;
+    public static User user1 ;
     /**
      * Creates new form QuenMK
      */
