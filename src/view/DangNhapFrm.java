@@ -40,55 +40,56 @@ public class DangNhapFrm extends javax.swing.JFrame {
         jtfTaiKhoan = new javax.swing.JTextField();
         jlbMatKhau = new javax.swing.JLabel();
         jwfMatKhau = new javax.swing.JPasswordField();
-        btnLogIn = new javax.swing.JButton();
+        btnSignIn = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnSignUp = new javax.swing.JButton();
+        jlbQuenMK = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(153, 255, 153));
 
         jlbTaiKhoan.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jlbTaiKhoan.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_user_48px.png")); // NOI18N
-        jlbTaiKhoan.setText("Tài khoản");
+        jlbTaiKhoan.setText("Tên đăng nhập");
 
         jLabel2.setBackground(new java.awt.Color(255, 255, 255));
         jLabel2.setFont(new java.awt.Font("Arial", 1, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_football_2_50px_1.png")); // NOI18N
         jLabel2.setText("ĐĂNG NHẬP");
 
         jtfTaiKhoan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
         jlbMatKhau.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jlbMatKhau.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_keepass_48px.png")); // NOI18N
         jlbMatKhau.setText("Mật khẩu");
 
         jwfMatKhau.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
 
-        btnLogIn.setBackground(new java.awt.Color(255, 255, 153));
-        btnLogIn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnLogIn.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_sign_in_form_password_48px.png")); // NOI18N
-        btnLogIn.setText("ĐĂNG NHẬP");
-        btnLogIn.setBorder(null);
-        btnLogIn.addActionListener(new java.awt.event.ActionListener() {
+        btnSignIn.setBackground(new java.awt.Color(255, 255, 153));
+        btnSignIn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnSignIn.setText("ĐĂNG NHẬP");
+        btnSignIn.setBorder(null);
+        btnSignIn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLogInActionPerformed(evt);
-            }
-        });
-        btnLogIn.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                btnLogInKeyPressed(evt);
+                btnSignInActionPerformed(evt);
             }
         });
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Tạo tài khoản mới");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnSignUp.setBackground(new java.awt.Color(255, 255, 255));
+        btnSignUp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        btnSignUp.setText("Tạo tài khoản mới");
+        btnSignUp.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnSignUpActionPerformed(evt);
+            }
+        });
+
+        jlbQuenMK.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jlbQuenMK.setForeground(new java.awt.Color(0, 0, 204));
+        jlbQuenMK.setText("Quên mật khẩu");
+        jlbQuenMK.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jlbQuenMKMouseClicked(evt);
             }
         });
 
@@ -96,32 +97,33 @@ public class DangNhapFrm extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfTaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
-                            .addComponent(jwfMatKhau)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jlbTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(149, 149, 149)
-                                .addComponent(jLabel1))
-                            .addComponent(jlbMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(46, 46, 46)
-                                .addComponent(jLabel4)
-                                .addGap(103, 103, 103))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(198, 198, 198)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnLogIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))))
-                .addContainerGap(50, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(0, 186, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(180, 180, 180))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jtfTaiKhoan, javax.swing.GroupLayout.DEFAULT_SIZE, 474, Short.MAX_VALUE)
+                    .addComponent(jwfMatKhau)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jlbTaiKhoan, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(149, 149, 149)
+                        .addComponent(jLabel1))
+                    .addComponent(jlbMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel4)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(198, 198, 198)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnSignIn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnSignUp, javax.swing.GroupLayout.DEFAULT_SIZE, 167, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jlbQuenMK, javax.swing.GroupLayout.PREFERRED_SIZE, 127, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -144,10 +146,12 @@ public class DangNhapFrm extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jwfMatKhau, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(37, 37, 37)
-                .addComponent(btnLogIn)
-                .addGap(35, 35, 35)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnSignUp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addComponent(jlbQuenMK)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -166,62 +170,74 @@ public class DangNhapFrm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnLogInKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_btnLogInKeyPressed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnLogInKeyPressed
-
-    private void btnLogInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLogInActionPerformed
+    private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
         // TODO add your handling code here:
         String tk = null, mk = null;
         boolean isOK = true;
-        boolean check = false;
+        boolean check_tk = false;
+        boolean check_mk = false;
         List<User> UserList = UserController.findAll();
-        if (jtfTaiKhoan.getText().length() > 0 && jtfTaiKhoan.getText() != null) {
-            tk = jtfTaiKhoan.getText();
-        } else {
+        if (jtfTaiKhoan.getText().length() <= 0 || jtfTaiKhoan.getText() == null) {
             JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập tài khoản");
             isOK = false;
-        }
-
-        if (jwfMatKhau.getPassword().length > 0) {
-            if (jwfMatKhau.getPassword().length >= 6) {
-                mk = String.valueOf(jwfMatKhau.getPassword());
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải có ít nhất 6 kí tự");
-            }
         } else {
-            JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập mật khẩu");
-            isOK = false;
+            tk = jtfTaiKhoan.getText();
+            if (jwfMatKhau.getPassword().length > 0) {
+                if (jwfMatKhau.getPassword().length >= 6) {
+                    mk = String.valueOf(jwfMatKhau.getPassword());
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải có ít nhất 6 kí tự");
+                    isOK = false;
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập mật khẩu");
+                isOK = false;
+            }
         }
 
         for (User user : UserList) {
-            //if (user.getTinhtrang() == 1) {
-                if (user.getTK().equals(tk)) {
-                    if (user.getMK().equals(mk)) {
-                        user1 = user ;
-                        check = true;
-                    }
+            if (user.getTK().equals(tk)) {
+                check_tk = true;
+                if (user.getMK().equals(mk)) {
+                    user1 = user ;
+                    check_mk = true;
                 }
-                //}
-        }
-        if (isOK) {
-            if (check) {
-                Home home = new Home(user1);
-                home.setTitle("Trang chủ");
-                home.setVisible(true);
-                this.dispose();
-            } else {
-                JOptionPane.showMessageDialog(rootPane, "Tài khoản hoặc mật khẩu không đúng");
             }
         }
-    }//GEN-LAST:event_btnLogInActionPerformed
+        
+        if (isOK) {
+            if (check_tk) {
+                if(check_mk) {
+                    Home home = new Home(user1);
+                    home.setTitle("Trang chủ");
+                    home.setVisible(true);
+                    this.dispose();
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Mật khẩu không đúng");
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Tài khoản không đúng");
+            }
+        }
+    }//GEN-LAST:event_btnSignInActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         // TODO add your handling code here:
         DangKyFrm dkf = new DangKyFrm();
         dkf.setTitle("Tạo tài khoản mới");
         dkf.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_btnSignUpActionPerformed
+
+    private void jlbQuenMKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jlbQuenMKMouseClicked
+        // TODO add your handling code here:
+        QuenMK qmk = new QuenMK();
+        qmk.setTitle("Khôi phục mật khẩu");
+        qmk.setVisible(true);
+        
+        this.setVisible(false);
+    }//GEN-LAST:event_jlbQuenMKMouseClicked
 
     /**
      * @param args the command line arguments
@@ -259,13 +275,14 @@ public class DangNhapFrm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnLogIn;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnSignIn;
+    private javax.swing.JButton btnSignUp;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel jlbMatKhau;
+    private javax.swing.JLabel jlbQuenMK;
     private javax.swing.JLabel jlbTaiKhoan;
     private javax.swing.JTextField jtfTaiKhoan;
     private javax.swing.JPasswordField jwfMatKhau;

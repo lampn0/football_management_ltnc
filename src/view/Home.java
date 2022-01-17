@@ -52,7 +52,6 @@ public class Home extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(255, 255, 255));
         jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_soccer_24px.png")); // NOI18N
         jButton1.setText("Kết quả trận đấu");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,7 +63,6 @@ public class Home extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
         jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_leaderboard_30px.png")); // NOI18N
         jButton4.setText("Bảng Xếp Hạng");
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -76,7 +74,6 @@ public class Home extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_exit_sign_40px.png")); // NOI18N
         jButton3.setText("Thoát");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,11 +81,10 @@ public class Home extends javax.swing.JFrame {
             }
         });
         jPanel1.add(jButton3);
-        jButton3.setBounds(420, 510, 128, 49);
+        jButton3.setBounds(420, 510, 128, 23);
 
         jButton2.setBackground(new java.awt.Color(255, 255, 255));
         jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_soccer_ball_24px.png")); // NOI18N
         jButton2.setText("Quản lý giải đấu");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

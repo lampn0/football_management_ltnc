@@ -1,8 +1,8 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: newschema
+-- Host: localhost    Database: match
 -- ------------------------------------------------------
--- Server version	8.0.26
+-- Server version	8.0.27
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -135,7 +135,7 @@ CREATE TABLE `taikhoan` (
 
 LOCK TABLES `taikhoan` WRITE;
 /*!40000 ALTER TABLE `taikhoan` DISABLE KEYS */;
-INSERT INTO `taikhoan` VALUES (5,'dinhcanh','Canhr101802@gmail.com','123456',1),(8,'user1','user@gmail.com','user123',0);
+INSERT INTO `taikhoan` VALUES (1,'lampn0','lampn0@dolphin-vc.com','lampn0@dolphin',1),(5,'dinhcanh','Canhr101802@gmail.com','123456',1),(8,'user1','user@gmail.com','user123',0);
 /*!40000 ALTER TABLE `taikhoan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-11 23:09:18
+-- Dump completed on 2022-01-17  9:33:56

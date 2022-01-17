@@ -30,8 +30,8 @@ public class UserController {
         PreparedStatement prestatement = null;
 
         try {
-            //Lấy tất cả dah sách sinh viên
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/newschema", "root", "123456");
+            //Lấy tất cả danh sách sinh viên
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/match", "root", "1234");
 
             //query
             String sql = "SELECT * FROM taikhoan";
