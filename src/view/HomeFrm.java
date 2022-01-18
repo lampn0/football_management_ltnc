@@ -1146,7 +1146,7 @@ public class HomeFrm extends javax.swing.JFrame {
 
             },
             new String [] {
-                "STT", "Tài khoản", "Email", "Mật khẩu", "Tình trạng"
+                "STT", "Tài khoản", "Email", "Tình trạng"
             }
         ));
         jtbUser.setRowHeight(20);

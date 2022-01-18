@@ -5,29 +5,35 @@
 package view;
 
 import controller.KQTDcontroller;
+import controller.LichThiDauController;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
-import model.KQTD;
+import javax.swing.table.DefaultTableModel;
+import model.TranDau;
 import model.User;
+
 
 /**
  *
- * @author lampn
+ * @author DinhC
  */
 public class LichThiDau extends javax.swing.JFrame{
-    List<KQTD> KQTDList = new ArrayList<>();
-    Thread t ; 
-    boolean isRunning=true;
+    List<TranDau> LichThiDauList = new ArrayList<>();
     User us;
+    DefaultTableModel tableLichThiDauModel;
+    DefaultTableModel tableLichCuaToiModel;
     /**
      * Creates new form LichThiDau
-     */  
+     */ 
     
     public LichThiDau(User us) {
-        this.us = us;
         initComponents();
+        this.us = us ; 
         this.setLocationRelativeTo(null);
-        KQTDList = KQTDcontroller.findAll();
+        tableLichThiDauModel = (DefaultTableModel) jTable1.getModel();
+        tableLichCuaToiModel = (DefaultTableModel) jTable2.getModel();
+        showLichThiDau();
     }
 
     /**
@@ -48,6 +54,8 @@ public class LichThiDau extends javax.swing.JFrame{
         time1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -90,6 +98,20 @@ public class LichThiDau extends javax.swing.JFrame{
         ));
         jScrollPane2.setViewportView(jTable2);
 
+        jButton2.setText("Đăng kí lịch");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
+        jButton3.setText("Tìm đối thủ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,6 +130,10 @@ public class LichThiDau extends javax.swing.JFrame{
                         .addContainerGap(670, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1))
                         .addGap(23, 23, 23)
@@ -129,9 +155,13 @@ public class LichThiDau extends javax.swing.JFrame{
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton2)
+                    .addComponent(jButton3))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -143,6 +173,18 @@ public class LichThiDau extends javax.swing.JFrame{
         home.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        DangKiLich dangki = new DangKiLich(us);
+        dangki.setVisible(true);        
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        TimDoiThu timdoithu = new TimDoiThu(us);
+        timdoithu.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -170,9 +212,6 @@ public class LichThiDau extends javax.swing.JFrame{
             java.util.logging.Logger.getLogger(LichThiDau.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -185,6 +224,8 @@ public class LichThiDau extends javax.swing.JFrame{
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -194,4 +235,18 @@ public class LichThiDau extends javax.swing.JFrame{
     private javax.swing.JLabel time;
     private javax.swing.JLabel time1;
     // End of variables declaration//GEN-END:variables
+
+    private void showLichThiDau() {
+        
+        LichThiDauList = LichThiDauController.findAll();
+        // Đưa số Row của table về 0
+        tableLichThiDauModel.setRowCount(0);
+
+        LichThiDauList.forEach(lichthidau -> {
+            tableLichThiDauModel.addRow(new Object[]{lichthidau.getThoigian(),
+                lichthidau.getTendoi1(),
+                lichthidau.getTendoi2(),
+                lichthidau.getSandau()});
+        });
+    }
 }

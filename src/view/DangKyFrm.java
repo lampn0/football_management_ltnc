@@ -60,7 +60,8 @@ public class DangKyFrm extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setText("Tình trạng");
 
-        cbTinhTrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Người dùng", "Quản lý" }));
+        cbTinhTrang.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        cbTinhTrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--Tình trạng--", "user", "admin" }));
         cbTinhTrang.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbTinhTrangActionPerformed(evt);
@@ -211,34 +212,31 @@ public class DangKyFrm extends javax.swing.JFrame {
             isOK = false;
         }
 
-        if (jwfMK.getPassword().length > 0) {
-            if(jwfMK.getPassword().length >= 6) {
-                mk = String.valueOf(jwfMK.getPassword());
-            }
-            else {
-                JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải ít nhất có 6 kí tự");
-                isOK = false;
-            }
-        } else {
+        if (jwfMK.getPassword().length <= 0 || String.valueOf(jwfMK.getPassword()).equals("000000")) {
             JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập mật khẩu");
             isOK = false;
-        }
-        
-        if (jwfConfirmMK.getPassword().length > 0) {
-            if(jwfConfirmMK.getPassword().length >= 6) {
-                confirmMk = String.valueOf(jwfConfirmMK.getPassword());
-                if(!mk.equals(confirmMk)) {
-                    JOptionPane.showMessageDialog(rootPane, "Mật khẩu xác nhận không đúng");
+        } else {
+            if(jwfMK.getPassword().length >= 6) {
+                mk = String.valueOf(jwfMK.getPassword());
+                if (jwfConfirmMK.getPassword().length > 0) {
+                    if(jwfConfirmMK.getPassword().length >= 6) {
+                    confirmMk = String.valueOf(jwfConfirmMK.getPassword());
+                        if(!mk.equals(confirmMk)) {
+                            JOptionPane.showMessageDialog(rootPane, "Mật khẩu xác nhận không đúng");
+                            isOK = false;
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải ít nhất có 6 kí tự");
+                        isOK = false;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa xác nhận mật khẩu");
                     isOK = false;
                 }
-            }
-            else {
+            } else {
                 JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải ít nhất có 6 kí tự");
                 isOK = false;
             }
-        } else {
-            JOptionPane.showMessageDialog(rootPane, "Bạn chưa xác nhận mật khẩu");
-            isOK = false;
         }
         
         if (cbTinhTrang.getSelectedIndex() > 0) {

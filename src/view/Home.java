@@ -13,9 +13,9 @@ import model.User;
  */
 public class Home extends javax.swing.JFrame {
     User us ;
-    FrmBXH frmBXH = new FrmBXH(us);
     FrmKQTD frmKQ;
     FrmTaiKhoan frmTK;
+    FrmBXH frmBXH;
     /**
      * Creates new form Home
      * @param user
@@ -92,6 +92,11 @@ public class Home extends javax.swing.JFrame {
         btnBXH.setMinimumSize(new java.awt.Dimension(55, 73));
         btnBXH.setPreferredSize(new java.awt.Dimension(55, 73));
         btnBXH.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnBXH.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBXHActionPerformed(evt);
+            }
+        });
         jToolBar2.add(btnBXH);
         jToolBar2.add(jSeparator8);
 
@@ -276,8 +281,21 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         DangNhapFrm frm = new DangNhapFrm();
         frm.setVisible(true);
-        
+        this.dispose();
     }//GEN-LAST:event_btnExitActionPerformed
+
+    private void btnBXHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBXHActionPerformed
+        // TODO add your handling code here:
+        if (frmBXH == null || frmBXH.isClosed()) {
+            frmBXH = new FrmBXH(us);
+            jDesktopPane1.add(frmBXH);
+            frmBXH.setLocation(0,0);
+            frmBXH.setVisible(true);
+        } else {
+            frmBXH.setLocation(0,0);
+            frmBXH.setVisible(true);
+        } 
+    }//GEN-LAST:event_btnBXHActionPerformed
 
     /**
      * @param args the command line arguments
