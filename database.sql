@@ -74,7 +74,7 @@ CREATE TABLE `clb` (
 
 LOCK TABLES `clb` WRITE;
 /*!40000 ALTER TABLE `clb` DISABLE KEYS */;
-INSERT INTO `clb` VALUES (75,'FC Anh Sơn','Kiều Đình Long','Nguyễn Đình Hoàng',7),(76,'FC Diễn Châu','Nguyễn Hữu Hiếu','Trần Quang Hải',7),(77,'FC TP Vinh','Trần Văn Mạnh','Phạm Văn Đức',7),(78,'FC Thanh Chương','Nguyễn Minh Bắc','Nguyễn Công Hùng',7);
+INSERT INTO `clb` VALUES (75,'FC Anh Sơn','Kiều Đình Long','Nguyễn Đình Hoàng',11),(76,'FC Diễn Châu','Nguyễn Hữu Hiếu','Trần Quang Hải',7),(77,'FC TP Vinh','Trần Văn Mạnh','Phạm Văn Đức',7),(78,'FC Thanh Chương','Nguyễn Minh Bắc','Nguyễn Công Hùng',7);
 /*!40000 ALTER TABLE `clb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -124,9 +124,9 @@ CREATE TABLE `taikhoan` (
   `tk` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `mk` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `tinhtrang` int NOT NULL,
+  `tinhtrang` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -135,7 +135,7 @@ CREATE TABLE `taikhoan` (
 
 LOCK TABLES `taikhoan` WRITE;
 /*!40000 ALTER TABLE `taikhoan` DISABLE KEYS */;
-INSERT INTO `taikhoan` VALUES (1,'lampn0','lampn0@dolphin-vc.com','lampn0@dolphin',1),(5,'dinhcanh','Canhr101802@gmail.com','123456',1),(8,'user1','user@gmail.com','user123',0);
+INSERT INTO `taikhoan` VALUES (1,'lampn0','lampn0@gmail.com','admin123','admin'),(5,'dinhcanh','Canhr101802@gmail.com','123456','user'),(8,'user1','user@gmail.com','user123','admin'),(9,'admin','admin@gmail.com','admin','user'),(10,'admin1','admin1','lampn0@','admin');
 /*!40000 ALTER TABLE `taikhoan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +165,7 @@ CREATE TABLE `thongtincauthu` (
 
 LOCK TABLES `thongtincauthu` WRITE;
 /*!40000 ALTER TABLE `thongtincauthu` DISABLE KEYS */;
-INSERT INTO `thongtincauthu` VALUES (29,75,'Nguyễn Đình Cảnh','2000-02-18',11,'Trung vệ'),(30,75,'Nguyễn Đức Lâm','2000-10-01',10,'Tiền đạo cánh trái'),(31,75,'Kiều Đình Long','2000-06-01',17,'Thủ môn'),(32,75,'Trần Văn Mạnh','2004-02-10',19,'Tiền đạo cánh phải'),(33,75,'Nguyễn Đức Cường','2003-12-01',4,'Hậu vệ phải'),(34,75,'Phạm Văn Đức','2001-02-01',6,'Tiền vệ'),(36,76,'Nguyễn Hữu Hiếu','2001-10-01',10,'Tiền đạo'),(37,76,'Trần Hữu Hào','2001-03-18',15,'Tiền vệ'),(38,76,'Hồ Việt Anh','2002-02-20',14,'Hậu vệ phải'),(39,76,'Vũ Việt Anh','2000-03-08',32,'Thủ môn'),(40,76,'Lê Văn Bình','2002-08-09',18,'Hậu vệ trái'),(41,76,'Trần Thái Đan','2004-03-08',16,'Tiền vệ'),(42,76,'Vũ Quang Duy','2000-05-04',6,'Trung vệ'),(43,78,'Vũ Nguyên Hạ','2001-10-09',12,'Tiền đạo'),(44,78,'Nguyễn  Duy Hiếu','2001-02-02',5,'Tiền vệ'),(45,78,'Lê Văn Hiệp','2002-09-18',14,'Tiền vệ'),(46,78,'Nguyễn Việt Hùng','2002-06-04',19,'Hậu vệ phải'),(47,78,'Hà Tuấn Hùng','2001-07-07',17,'Hậu vệ trái'),(48,78,'Nguyễn Quang Huy','2002-04-03',13,'Tiền đạo'),(49,78,'Nguyễn Trọng Khải','2000-02-19',1,'Thủ môn'),(57,75,'Trần Quốc Đam','2001-08-18',3,'Hậu vệ trái');
+INSERT INTO `thongtincauthu` VALUES (1,75,'Phạm Ngọc Lâm','2001-08-18',4,'Hậu vệ trái'),(2,75,'Lê Quang Hưng','2001-08-18',5,'Hậu vệ trái'),(3,75,'Nguyền Đình Hiếu','2001-08-18',6,'Hậu vệ trái'),(4,75,'Lê Quốc Bảo','2001-08-18',7,'Hậu vệ trái'),(29,75,'Nguyễn Đình Cảnh','2000-02-18',11,'Trung vệ'),(30,75,'Nguyễn Đức Lâm','2000-10-01',10,'Tiền đạo cánh trái'),(31,75,'Kiều Đình Long','2000-06-01',17,'Thủ môn'),(32,75,'Trần Văn Mạnh','2004-02-10',19,'Tiền đạo cánh phải'),(33,75,'Nguyễn Đức Cường','2003-12-01',4,'Hậu vệ phải'),(34,75,'Phạm Văn Đức','2001-02-01',6,'Tiền vệ'),(36,76,'Nguyễn Hữu Hiếu','2001-10-01',10,'Tiền đạo'),(37,76,'Trần Hữu Hào','2001-03-18',15,'Tiền vệ'),(38,76,'Hồ Việt Anh','2002-02-20',14,'Hậu vệ phải'),(39,76,'Vũ Việt Anh','2000-03-08',32,'Thủ môn'),(40,76,'Lê Văn Bình','2002-08-09',18,'Hậu vệ trái'),(41,76,'Trần Thái Đan','2004-03-08',16,'Tiền vệ'),(42,76,'Vũ Quang Duy','2000-05-04',6,'Trung vệ'),(43,78,'Vũ Nguyên Hạ','2001-10-09',12,'Tiền đạo'),(44,78,'Nguyễn  Duy Hiếu','2001-02-02',5,'Tiền vệ'),(45,78,'Lê Văn Hiệp','2002-09-18',14,'Tiền vệ'),(46,78,'Nguyễn Việt Hùng','2002-06-04',19,'Hậu vệ phải'),(47,78,'Hà Tuấn Hùng','2001-07-07',17,'Hậu vệ trái'),(48,78,'Nguyễn Quang Huy','2002-04-03',13,'Tiền đạo'),(49,78,'Nguyễn Trọng Khải','2000-02-19',1,'Thủ môn'),(57,75,'Trần Quốc Đam','2001-08-18',3,'Hậu vệ trái');
 /*!40000 ALTER TABLE `thongtincauthu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-17  9:33:56
+-- Dump completed on 2022-01-18 20:12:28
