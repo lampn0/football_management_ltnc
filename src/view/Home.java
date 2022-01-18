@@ -14,6 +14,7 @@ import model.User;
 public class Home extends javax.swing.JFrame {
     User us ;
     FrmBXH frmBXH = new FrmBXH(us);
+    FrmKQTD frmKQ;
     FrmTaiKhoan frmTK;
     /**
      * Creates new form Home
@@ -42,18 +43,20 @@ public class Home extends javax.swing.JFrame {
         jMenu6 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
         jToolBar2 = new javax.swing.JToolBar();
-        btnBXH1 = new javax.swing.JButton();
+        btnBXH = new javax.swing.JButton();
         jSeparator8 = new javax.swing.JToolBar.Separator();
-        btnKQ1 = new javax.swing.JButton();
+        btnKQ = new javax.swing.JButton();
         jSeparator9 = new javax.swing.JToolBar.Separator();
-        btnQL1 = new javax.swing.JButton();
+        btnQL = new javax.swing.JButton();
         jSeparator10 = new javax.swing.JToolBar.Separator();
-        btnTK1 = new javax.swing.JButton();
+        btnLichDau = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
+        btnTK = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
-        btnExit1 = new javax.swing.JButton();
+        btnExit = new javax.swing.JButton();
         jDesktopPane1 = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        jMenu = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
@@ -80,62 +83,86 @@ public class Home extends javax.swing.JFrame {
 
         jToolBar2.setRollover(true);
 
-        btnBXH1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnBXH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_leaderboard_40px.png"))); // NOI18N
-        btnBXH1.setText("BXH");
-        btnBXH1.setFocusable(false);
-        btnBXH1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnBXH1.setMaximumSize(new java.awt.Dimension(55, 73));
-        btnBXH1.setMinimumSize(new java.awt.Dimension(55, 73));
-        btnBXH1.setPreferredSize(new java.awt.Dimension(55, 73));
-        btnBXH1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(btnBXH1);
+        btnBXH.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnBXH.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/leaderboard_48px.png"))); // NOI18N
+        btnBXH.setText("BXH");
+        btnBXH.setFocusable(false);
+        btnBXH.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnBXH.setMaximumSize(new java.awt.Dimension(55, 73));
+        btnBXH.setMinimumSize(new java.awt.Dimension(55, 73));
+        btnBXH.setPreferredSize(new java.awt.Dimension(55, 73));
+        btnBXH.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnBXH);
         jToolBar2.add(jSeparator8);
 
-        btnKQ1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnKQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/goals-icon.png"))); // NOI18N
-        btnKQ1.setText("Kết quả");
-        btnKQ1.setFocusable(false);
-        btnKQ1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnKQ1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(btnKQ1);
+        btnKQ.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnKQ.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/goals-icon.png"))); // NOI18N
+        btnKQ.setText("Kết quả");
+        btnKQ.setFocusable(false);
+        btnKQ.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnKQ.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnKQ.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKQActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(btnKQ);
         jToolBar2.add(jSeparator9);
 
-        btnQL1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnQL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_football_2_50px.png"))); // NOI18N
-        btnQL1.setText("Quản lý");
-        btnQL1.setFocusable(false);
-        btnQL1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnQL1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnQL1.addActionListener(new java.awt.event.ActionListener() {
+        btnQL.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnQL.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_football_2_50px.png"))); // NOI18N
+        btnQL.setText("Quản lý");
+        btnQL.setFocusable(false);
+        btnQL.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnQL.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnQL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnQL1ActionPerformed(evt);
+                btnQLActionPerformed(evt);
             }
         });
-        jToolBar2.add(btnQL1);
+        jToolBar2.add(btnQL);
         jToolBar2.add(jSeparator10);
 
-        btnTK1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnTK1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_user_menu_male_skin_type_7_48px.png"))); // NOI18N
-        btnTK1.setText("Tài khoản");
-        btnTK1.setFocusable(false);
-        btnTK1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnTK1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnTK1.addActionListener(new java.awt.event.ActionListener() {
+        btnLichDau.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnLichDau.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Calendar-icon.png"))); // NOI18N
+        btnLichDau.setText("Lịch đấu");
+        btnLichDau.setFocusable(false);
+        btnLichDau.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLichDau.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnLichDau.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnTK1ActionPerformed(evt);
+                btnLichDauActionPerformed(evt);
             }
         });
-        jToolBar2.add(btnTK1);
+        jToolBar2.add(btnLichDau);
+        jToolBar2.add(jSeparator1);
+
+        btnTK.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnTK.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_user_menu_male_skin_type_7_48px.png"))); // NOI18N
+        btnTK.setText("Tài khoản");
+        btnTK.setFocusable(false);
+        btnTK.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTK.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnTK.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTKActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(btnTK);
         jToolBar2.add(jSeparator2);
 
-        btnExit1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnExit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_Logout_48px.png"))); // NOI18N
-        btnExit1.setText("Exit");
-        btnExit1.setFocusable(false);
-        btnExit1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnExit1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar2.add(btnExit1);
+        btnExit.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnExit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_Logout_48px.png"))); // NOI18N
+        btnExit.setText("Exit");
+        btnExit.setFocusable(false);
+        btnExit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnExitActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(btnExit);
 
         javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
         jDesktopPane1.setLayout(jDesktopPane1Layout);
@@ -148,17 +175,17 @@ public class Home extends javax.swing.JFrame {
             .addGap(0, 435, Short.MAX_VALUE)
         );
 
-        jMenu1.setText("Menu");
+        jMenu.setText("Menu");
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
         jMenuItem2.setText("Refresh");
-        jMenu1.add(jMenuItem2);
+        jMenu.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItem3.setText("Exit");
-        jMenu1.add(jMenuItem3);
+        jMenu.add(jMenuItem3);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(jMenu);
 
         jMenu2.setText("Tool");
 
@@ -182,7 +209,7 @@ public class Home extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 696, Short.MAX_VALUE))
+                .addGap(0, 630, Short.MAX_VALUE))
             .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
@@ -196,7 +223,7 @@ public class Home extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnTK1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTK1ActionPerformed
+    private void btnTKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTKActionPerformed
         // TODO add your handling code here:
         if (frmTK == null || frmTK.isClosed()) {
             frmTK = new FrmTaiKhoan(us);
@@ -206,11 +233,10 @@ public class Home extends javax.swing.JFrame {
         } else {
             frmTK.setLocation(0,0);
             frmTK.setVisible(true);
-        } 
-            
-    }//GEN-LAST:event_btnTK1ActionPerformed
+        }      
+    }//GEN-LAST:event_btnTKActionPerformed
 
-    private void btnQL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQL1ActionPerformed
+    private void btnQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQLActionPerformed
         // TODO add your handling code here:
         boolean check = false ;       
             if (us.getTinhtrang().equals("admin")) {
@@ -224,7 +250,34 @@ public class Home extends javax.swing.JFrame {
         else {
             JOptionPane.showMessageDialog(rootPane, "Ban không có quyền truy cập");
         }
-    }//GEN-LAST:event_btnQL1ActionPerformed
+    }//GEN-LAST:event_btnQLActionPerformed
+
+    private void btnLichDauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLichDauActionPerformed
+        // TODO add your handling code here:
+        LichThiDau lichdau = new LichThiDau(us);
+        lichdau.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_btnLichDauActionPerformed
+
+    private void btnKQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKQActionPerformed
+        // TODO add your handling code here:
+        if (frmKQ == null || frmKQ.isClosed()) {
+            frmKQ = new FrmKQTD(us);
+            jDesktopPane1.add(frmKQ);
+            frmKQ.setLocation(0,0);
+            frmKQ.setVisible(true);
+        } else {
+            frmKQ.setLocation(0,0);
+            frmKQ.setVisible(true);
+        } 
+    }//GEN-LAST:event_btnKQActionPerformed
+
+    private void btnExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExitActionPerformed
+        // TODO add your handling code here:
+        DangNhapFrm frm = new DangNhapFrm();
+        frm.setVisible(true);
+        
+    }//GEN-LAST:event_btnExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -263,14 +316,15 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBXH1;
-    private javax.swing.JButton btnExit1;
-    private javax.swing.JButton btnKQ1;
-    private javax.swing.JButton btnQL1;
-    private javax.swing.JButton btnTK1;
+    private javax.swing.JButton btnBXH;
+    private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnKQ;
+    private javax.swing.JButton btnLichDau;
+    private javax.swing.JButton btnQL;
+    private javax.swing.JButton btnTK;
     private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -284,6 +338,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator2;
     private javax.swing.JToolBar.Separator jSeparator8;

@@ -144,7 +144,7 @@ public class FrmTaiKhoan extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(250, Short.MAX_VALUE)
+                        .addContainerGap(280, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jlbDMK)
                             .addGroup(layout.createSequentialGroup()
@@ -197,7 +197,7 @@ public class FrmTaiKhoan extends javax.swing.JInternalFrame {
                     .addComponent(btnCapNhat)
                     .addComponent(btnXacNhan)
                     .addComponent(btnCancel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(btnThoat)
                 .addContainerGap())
         );
