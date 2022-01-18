@@ -50,8 +50,8 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnCancel" min="-2" pref="73" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="jPasswordField1" alignment="0" min="-2" pref="280" max="-2" attributes="0"/>
-                          <Component id="jPasswordField2" alignment="0" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="jwfConfirmMK" alignment="0" min="-2" pref="280" max="-2" attributes="0"/>
+                          <Component id="jwfMK" alignment="0" min="-2" pref="280" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="54" max="32767" attributes="0"/>
@@ -66,11 +66,11 @@
                   <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
                   <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPasswordField2" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="jwfMK" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPasswordField1" min="-2" pref="31" max="-2" attributes="0"/>
+                  <Component id="jwfConfirmMK" min="-2" pref="31" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="btnXacNhan" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -128,9 +128,9 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+        <Component class="javax.swing.JPasswordField" name="jwfConfirmMK">
         </Component>
-        <Component class="javax.swing.JPasswordField" name="jPasswordField2">
+        <Component class="javax.swing.JPasswordField" name="jwfMK">
         </Component>
       </SubComponents>
     </Container>

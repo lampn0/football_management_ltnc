@@ -18,6 +18,7 @@ public class FrmDoiMK extends javax.swing.JFrame {
      */
     public FrmDoiMK() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -35,8 +36,8 @@ public class FrmDoiMK extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         btnXacNhan = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jPasswordField2 = new javax.swing.JPasswordField();
+        jwfConfirmMK = new javax.swing.JPasswordField();
+        jwfMK = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,8 +81,8 @@ public class FrmDoiMK extends javax.swing.JFrame {
                             .addComponent(btnXacNhan)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnCancel, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jwfConfirmMK, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jwfMK, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(54, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -92,11 +93,11 @@ public class FrmDoiMK extends javax.swing.JFrame {
                 .addGap(44, 44, 44)
                 .addComponent(jLabel2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jwfMK, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jwfConfirmMK, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnXacNhan)
@@ -120,14 +121,41 @@ public class FrmDoiMK extends javax.swing.JFrame {
 
     private void btnXacNhanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXacNhanActionPerformed
         // TODO add your handling code here:
-        if (String.valueOf(jPasswordField1.getPassword()).equals(String.valueOf(jPasswordField2.getPassword()))) {
-            DangNhapFrm.user1.setMK(String.valueOf(jPasswordField1.getPassword()));
+        boolean isOK = true;
+        String mk = null, confirmMk = null;
+        if (jwfMK.getPassword().length <= 0 || String.valueOf(jwfMK.getPassword()).equals("000000")) {
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập mật khẩu");
+            isOK = false;
+        } else {
+            if(jwfMK.getPassword().length >= 6) {
+                mk = String.valueOf(jwfMK.getPassword());
+                if (jwfConfirmMK.getPassword().length > 0) {
+                    if(jwfConfirmMK.getPassword().length >= 6) {
+                    confirmMk = String.valueOf(jwfConfirmMK.getPassword());
+                        if(!mk.equals(confirmMk)) {
+                            JOptionPane.showMessageDialog(rootPane, "Mật khẩu xác nhận không đúng");
+                            isOK = false;
+                        }
+                    } else {
+                        JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải ít nhất có 6 kí tự");
+                        isOK = false;
+                    }
+                } else {
+                    JOptionPane.showMessageDialog(rootPane, "Bạn chưa xác nhận mật khẩu");
+                    isOK = false;
+                }
+            } else {
+                JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải ít nhất có 6 kí tự");
+                isOK = false;
+            }
+        }
+        
+        if (isOK) {
+            DangNhapFrm.user1.setMK(mk);
             UserController.update(DangNhapFrm.user1);
             JOptionPane.showConfirmDialog(rootPane, "Xác nhận đổi mật khẩu" );
             JOptionPane.showMessageDialog(rootPane,"Bạn đã cập nhật mật khẩu thành công");
             this.dispose();
-        } else {
-            JOptionPane.showMessageDialog(rootPane,"Mật khẩu xác thực chưa đúng");
         }
     }//GEN-LAST:event_btnXacNhanActionPerformed
 
@@ -178,7 +206,7 @@ public class FrmDoiMK extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JPasswordField jPasswordField2;
+    private javax.swing.JPasswordField jwfConfirmMK;
+    private javax.swing.JPasswordField jwfMK;
     // End of variables declaration//GEN-END:variables
 }

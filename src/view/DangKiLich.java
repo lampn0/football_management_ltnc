@@ -11,21 +11,17 @@ import model.User;
  * @author Admin
  */
 public class DangKiLich extends javax.swing.JFrame {
-
     User us;
-    
-    
     /**
      * Creates new form DangKiLich
      */
-    
-    
+
     public DangKiLich(User us) {
         this.us = us;
         initComponents();
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+        this.setLocationRelativeTo(null);
     }
-
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

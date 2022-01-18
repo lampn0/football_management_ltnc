@@ -48,14 +48,14 @@ public class LichThiDau extends javax.swing.JFrame{
         jLabel2 = new javax.swing.JLabel();
         time = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        btnQL = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         time1 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnDK = new javax.swing.JButton();
+        btnTimDT = new javax.swing.JButton();
 
         jLabel2.setText("jLabel2");
 
@@ -63,10 +63,10 @@ public class LichThiDau extends javax.swing.JFrame{
 
         time.setText("Lịch thi đấu");
 
-        jButton1.setText("Quay lại");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnQL.setText("Quay lại");
+        btnQL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnQLActionPerformed(evt);
             }
         });
 
@@ -98,17 +98,17 @@ public class LichThiDau extends javax.swing.JFrame{
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jButton2.setText("Đăng kí lịch");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnDK.setText("Đăng kí lịch");
+        btnDK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnDKActionPerformed(evt);
             }
         });
 
-        jButton3.setText("Tìm đối thủ");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnTimDT.setText("Tìm đối thủ");
+        btnTimDT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnTimDTActionPerformed(evt);
             }
         });
 
@@ -118,7 +118,7 @@ public class LichThiDau extends javax.swing.JFrame{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnQL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -131,9 +131,9 @@ public class LichThiDau extends javax.swing.JFrame{
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnDK, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnTimDT, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1))
                         .addGap(23, 23, 23)
@@ -143,7 +143,7 @@ public class LichThiDau extends javax.swing.JFrame{
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(btnQL)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
@@ -159,32 +159,32 @@ public class LichThiDau extends javax.swing.JFrame{
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3))
+                    .addComponent(btnDK)
+                    .addComponent(btnTimDT))
                 .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQLActionPerformed
         // TODO add your handling code here:
         Home home = new Home(us);
         home.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnQLActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnDKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDKActionPerformed
         // TODO add your handling code here:
         DangKiLich dangki = new DangKiLich(us);
         dangki.setVisible(true);        
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_btnDKActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void btnTimDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimDTActionPerformed
         // TODO add your handling code here:
         TimDoiThu timdoithu = new TimDoiThu(us);
         timdoithu.setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_btnTimDTActionPerformed
 
     /**
      * @param args the command line arguments
@@ -223,9 +223,9 @@ public class LichThiDau extends javax.swing.JFrame{
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnDK;
+    private javax.swing.JButton btnQL;
+    private javax.swing.JButton btnTimDT;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;

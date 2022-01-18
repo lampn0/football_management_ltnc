@@ -32,7 +32,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="jButton1" min="-2" pref="109" max="-2" attributes="0"/>
+              <Component id="btnQL" min="-2" pref="109" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
           </Group>
           <Group type="102" attributes="0">
@@ -48,9 +48,9 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="1" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="jButton2" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="btnDK" min="-2" pref="205" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="205" max="-2" attributes="0"/>
+                              <Component id="btnTimDT" min="-2" pref="205" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
                           <Component id="jScrollPane1" max="32767" attributes="0"/>
@@ -66,7 +66,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <Component id="btnQL" min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="72" max="-2" attributes="0"/>
@@ -85,8 +85,8 @@
               <Component id="jScrollPane2" min="-2" pref="90" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jButton3" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnDK" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="btnTimDT" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="30" max="32767" attributes="0"/>
           </Group>
@@ -101,12 +101,12 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel1">
     </Component>
-    <Component class="javax.swing.JButton" name="jButton1">
+    <Component class="javax.swing.JButton" name="btnQL">
       <Properties>
         <Property name="text" type="java.lang.String" value="Quay l&#x1ea1;i"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnQLActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
@@ -210,20 +210,20 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="jButton2">
+    <Component class="javax.swing.JButton" name="btnDK">
       <Properties>
         <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng k&#xed; l&#x1ecb;ch"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton2ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDKActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="jButton3">
+    <Component class="javax.swing.JButton" name="btnTimDT">
       <Properties>
         <Property name="text" type="java.lang.String" value="T&#xec;m &#x111;&#x1ed1;i th&#x1ee7;"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnTimDTActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

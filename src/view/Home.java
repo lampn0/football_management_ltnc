@@ -23,6 +23,7 @@ public class Home extends javax.swing.JFrame {
     public Home(User user) {
         initComponents();
         us = user ; 
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
 
