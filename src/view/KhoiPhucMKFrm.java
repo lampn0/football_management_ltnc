@@ -125,6 +125,7 @@ public class KhoiPhucMKFrm extends javax.swing.JFrame {
         if (String.valueOf(jPasswordField1.getPassword()).equals(String.valueOf(jPasswordField2.getPassword()))) {
             quenmk.user1.setMK(String.valueOf(jPasswordField1.getPassword()));
             UserController.update(quenmk.user1);
+            JOptionPane.showConfirmDialog(rootPane, "Xác nhận đổi mật khẩu" );
             JOptionPane.showMessageDialog(rootPane,"Bạn đã cập nhật mật khẩu thành công");
             this.dispose();
         } else {

@@ -11,7 +11,7 @@ import model.User;
 
 /**
  *
- * @author DinhC
+ * @author LamPham
  */
 public class DangKyFrm extends javax.swing.JFrame {
 
@@ -68,8 +68,7 @@ public class DangKyFrm extends javax.swing.JFrame {
         });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\DinhC\\AppData\\Local\\Temp\\icons8_penalty_40px.png")); // NOI18N
-        jLabel1.setText("Nhập thông tin tài khoản");
+        jLabel1.setText("ĐĂNG KÝ TÀI KHOẢN");
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel2.setText("Tên tài khoản");
@@ -87,9 +86,9 @@ public class DangKyFrm extends javax.swing.JFrame {
             }
         });
 
-        jwfMK.setText("jPasswordField1");
+        jwfMK.setText("000000");
 
-        jwfConfirmMK.setText("jPasswordField1");
+        jwfConfirmMK.setText("000000");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -132,8 +131,8 @@ public class DangKyFrm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(102, 102, 102)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(424, Short.MAX_VALUE)))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(439, Short.MAX_VALUE)))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,7 +164,7 @@ public class DangKyFrm extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createSequentialGroup()
                     .addGap(114, 114, 114)
                     .addComponent(jLabel2)
-                    .addContainerGap(260, Short.MAX_VALUE)))
+                    .addContainerGap(265, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,30 +188,26 @@ public class DangKyFrm extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         boolean isOK = true;
-        String tk = null, email = null, mk = null, confirmMk = null;
-        int tinhtrang = 0;
+        String tk = null, email = null, mk = null, confirmMk = null, tinhtrang = null;
         List<User> UserList = UserController.findAll();
 
         if (jtfTK.getText().length() > 0 && jtfTK.getText() != null) {
             tk = jtfTK.getText();
             for(User user : UserList) {
                 if(user.getTK().equals(tk)) {
-                    JOptionPane.showMessageDialog(rootPane,
-                    "Tài khoản đã tồn tại trong hệ thống");
+                    JOptionPane.showMessageDialog(rootPane, "Tài khoản đã tồn tại trong hệ thống");
                     isOK = false;
                 }
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane,
-                "Bạn chưa nhập tài khoản");
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập tài khoản");
             isOK = false;
         }
 
         if (jtfEmail.getText().length() > 0 && jtfEmail.getText() != null) {
             email = jtfEmail.getText();
         } else {
-            JOptionPane.showMessageDialog(rootPane,
-                "Bạn chưa nhập email");
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập email");
             isOK = false;
         }
 
@@ -221,13 +216,11 @@ public class DangKyFrm extends javax.swing.JFrame {
                 mk = String.valueOf(jwfMK.getPassword());
             }
             else {
-                JOptionPane.showMessageDialog(rootPane,
-                "Mật khẩu phải ít nhất có 6 kí tự");
+                JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải ít nhất có 6 kí tự");
                 isOK = false;
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane,
-                "Bạn chưa nhập mật khẩu");
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa nhập mật khẩu");
             isOK = false;
         }
         
@@ -235,33 +228,29 @@ public class DangKyFrm extends javax.swing.JFrame {
             if(jwfConfirmMK.getPassword().length >= 6) {
                 confirmMk = String.valueOf(jwfConfirmMK.getPassword());
                 if(!mk.equals(confirmMk)) {
-                    JOptionPane.showMessageDialog(rootPane, "Mật khẩu nhập lại không đúng");
+                    JOptionPane.showMessageDialog(rootPane, "Mật khẩu xác nhận không đúng");
                     isOK = false;
                 }
             }
             else {
-                JOptionPane.showMessageDialog(rootPane,
-                "Mật khảu phải ít nhất có 6 kí tự");
+                JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải ít nhất có 6 kí tự");
                 isOK = false;
             }
         } else {
-            JOptionPane.showMessageDialog(rootPane,
-                "Bạn chưa nhập lại mật khẩu");
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa xác nhận mật khẩu");
             isOK = false;
         }
         
         if (cbTinhTrang.getSelectedIndex() > 0) {
-            tinhtrang = cbTinhTrang.getSelectedIndex();
+            tinhtrang = cbTinhTrang.getSelectedItem().toString();
         } else {
-            JOptionPane.showMessageDialog(rootPane,
-                "Bạn chưa chọn tình trạng tài khoản");
+            JOptionPane.showMessageDialog(rootPane, "Bạn chưa chọn tình trạng tài khoản");
             isOK = false;
         }
 
         if (isOK) {
             User user = new User(tinhtrang, tk, email, mk);
-            JOptionPane.showMessageDialog(rootPane,
-                "Bạn đã thêm thành công tài khoản");
+            JOptionPane.showMessageDialog(rootPane, "Bạn đã thêm thành công tài khoản");
             UserController.insert(user);
 
             cbTinhTrang.setSelectedIndex(0);
@@ -271,7 +260,7 @@ public class DangKyFrm extends javax.swing.JFrame {
             jwfConfirmMK.setText("");
         }
     }//GEN-LAST:event_jButton1ActionPerformed
-
+   
     /**
      * @param args the command line arguments
      */

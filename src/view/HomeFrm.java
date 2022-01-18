@@ -29,7 +29,7 @@ import model.VongDau;
 
 /**
  *
- * @author Dell
+ * @author LamPham
  */
 public class HomeFrm extends javax.swing.JFrame {
 
@@ -1036,7 +1036,7 @@ public class HomeFrm extends javax.swing.JFrame {
         jlbTinhTrang.setText("Tình trang:");
 
         cbTinhTrang.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        cbTinhTrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--- Chọn TT ---", "0", "1" }));
+        cbTinhTrang.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "--- Chọn TT ---", "admin", "user" }));
 
         jwfConfirmMK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1237,8 +1237,7 @@ public class HomeFrm extends javax.swing.JFrame {
     private void btnSaveUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSaveUserActionPerformed
         // TODO add your handling code here:
         boolean isOK = true;
-        String tk = null, email = null, mk = null, confirmMk = null;
-        int tinhtrang = 0;
+        String tk = null, email = null, mk = null, confirmMk = null, tinhtrang = null;
         UserList = UserController.findAll();
 
         if (jtfTK.getText().length() > 0 && jtfTK.getText() != null) {
@@ -1299,7 +1298,7 @@ public class HomeFrm extends javax.swing.JFrame {
         }
         
         if (cbTinhTrang.getSelectedIndex() > 0) {
-            tinhtrang = Integer.parseInt(cbTinhTrang.getSelectedItem().toString());
+            tinhtrang = cbTinhTrang.getSelectedItem().toString();
         } else {
             JOptionPane.showMessageDialog(rootPane,
                 "Bạn chưa chọn tình trạng tài khoản");

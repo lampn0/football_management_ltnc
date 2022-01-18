@@ -7,17 +7,17 @@ package model;
 
 /**
  *
- * @author Dell
+ * @author LamPham
  */
 public class User {
 
-    int id, tinhtrang;
-    String TK, email, MK;
+    int id;
+    String TK, email, MK, tinhtrang;
 
     public User() {
     }
 
-    public User(int id, int tinhtrang, String TK, String email, String MK) {
+    public User(int id, String tinhtrang, String TK, String email, String MK) {
         this.id = id;
         this.tinhtrang = tinhtrang;
         this.TK = TK;
@@ -25,13 +25,20 @@ public class User {
         this.MK = MK;
     }
 
-    public User(int tinhtrang, String TK, String email, String MK) {
+    public User(String tinhtrang, String TK, String email, String MK) {
         this.tinhtrang = tinhtrang;
         this.TK = TK;
         this.email = email;
         this.MK = MK;
     }
 
+    public User(int id, String tinhtrang, String TK, String email) {
+        this.id = id;
+        this.tinhtrang = tinhtrang;
+        this.TK = TK;
+        this.email = email;
+    }
+    
     public int getId() {
         return id;
     }
@@ -40,11 +47,11 @@ public class User {
         this.id = id;
     }
 
-    public int getTinhtrang() {
+    public String getTinhtrang() {
         return tinhtrang;
     }
 
-    public void setTinhtrang(int tinhtrang) {
+    public void setTinhtrang(String tinhtrang) {
         this.tinhtrang = tinhtrang;
     }
 

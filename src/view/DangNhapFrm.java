@@ -12,10 +12,10 @@ import model.User;
 
 /**
  *
- * @author Dell
+ * @author LamPham
  */
 public class DangNhapFrm extends javax.swing.JFrame {
-    User user1 ; 
+    public static User user1 ; 
     /**
      * Creates new form DangNhapFrm
      */
@@ -64,6 +64,11 @@ public class DangNhapFrm extends javax.swing.JFrame {
         jlbMatKhau.setText("Mật khẩu");
 
         jwfMatKhau.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jwfMatKhau.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jwfMatKhauActionPerformed(evt);
+            }
+        });
 
         btnSignIn.setBackground(new java.awt.Color(255, 255, 153));
         btnSignIn.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -169,9 +174,7 @@ public class DangNhapFrm extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
-        // TODO add your handling code here:
+    public void signIn() {
         String tk = null, mk = null;
         boolean isOK = true;
         boolean check_tk = false;
@@ -183,7 +186,7 @@ public class DangNhapFrm extends javax.swing.JFrame {
         } else {
             tk = jtfTaiKhoan.getText();
             if (jwfMatKhau.getPassword().length > 0) {
-                if (jwfMatKhau.getPassword().length >= 6) {
+                if (jwfMatKhau.getPassword().length >= 6 || String.valueOf(jwfMatKhau.getPassword()).equals("admin")) {
                     mk = String.valueOf(jwfMatKhau.getPassword());
                 } else {
                     JOptionPane.showMessageDialog(rootPane, "Mật khẩu phải có ít nhất 6 kí tự");
@@ -219,8 +222,13 @@ public class DangNhapFrm extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(rootPane, "Tài khoản không đúng");
             }
         }
+    }
+    
+    private void btnSignInActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignInActionPerformed
+        // TODO add your handling code here:
+        signIn();
     }//GEN-LAST:event_btnSignInActionPerformed
-
+  
     private void btnSignUpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignUpActionPerformed
         // TODO add your handling code here:
         DangKyFrm dkf = new DangKyFrm();
@@ -235,9 +243,13 @@ public class DangNhapFrm extends javax.swing.JFrame {
         QuenMK qmk = new QuenMK();
         qmk.setTitle("Khôi phục mật khẩu");
         qmk.setVisible(true);
-        
         this.setVisible(false);
     }//GEN-LAST:event_jlbQuenMKMouseClicked
+
+    private void jwfMatKhauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jwfMatKhauActionPerformed
+        // TODO add your handling code here:
+        signIn();
+    }//GEN-LAST:event_jwfMatKhauActionPerformed
 
     /**
      * @param args the command line arguments

@@ -4,26 +4,23 @@
  */
 package view;
 
-import controller.UserController;
-import java.util.List;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import model.User;
 
 /**
  *
- * @author DinhC
+ * @author LamPham
  */
 public class Home extends javax.swing.JFrame {
     User us ;
-    
+    FrmBXH frmBXH = new FrmBXH(us);
+    FrmTaiKhoan frmTK;
     /**
      * Creates new form Home
+     * @param user
      */
     public Home(User user) {
         initComponents();
-        
         us = user ; 
         this.setLocationRelativeTo(null);
     }
@@ -37,125 +34,197 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jMenuBar2 = new javax.swing.JMenuBar();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu4 = new javax.swing.JMenu();
+        jMenuBar3 = new javax.swing.JMenuBar();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
         jLabel1 = new javax.swing.JLabel();
+        jToolBar2 = new javax.swing.JToolBar();
+        btnBXH1 = new javax.swing.JButton();
+        jSeparator8 = new javax.swing.JToolBar.Separator();
+        btnKQ1 = new javax.swing.JButton();
+        jSeparator9 = new javax.swing.JToolBar.Separator();
+        btnQL1 = new javax.swing.JButton();
+        jSeparator10 = new javax.swing.JToolBar.Separator();
+        btnTK1 = new javax.swing.JButton();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
+        btnExit1 = new javax.swing.JButton();
+        jDesktopPane1 = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenu7 = new javax.swing.JMenu();
+        jMenuItem4 = new javax.swing.JMenuItem();
+
+        jMenu3.setText("File");
+        jMenuBar2.add(jMenu3);
+
+        jMenu4.setText("Edit");
+        jMenuBar2.add(jMenu4);
+
+        jMenu5.setText("File");
+        jMenuBar3.add(jMenu5);
+
+        jMenu6.setText("Edit");
+        jMenuBar3.add(jMenu6);
+
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Home.jpg"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel1.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel1.setLayout(null);
+        jToolBar2.setRollover(true);
 
-        jButton1.setBackground(new java.awt.Color(255, 255, 255));
-        jButton1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton1.setText("Kết quả trận đấu");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnBXH1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnBXH1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_leaderboard_40px.png"))); // NOI18N
+        btnBXH1.setText("BXH");
+        btnBXH1.setFocusable(false);
+        btnBXH1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnBXH1.setMaximumSize(new java.awt.Dimension(55, 73));
+        btnBXH1.setMinimumSize(new java.awt.Dimension(55, 73));
+        btnBXH1.setPreferredSize(new java.awt.Dimension(55, 73));
+        btnBXH1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnBXH1);
+        jToolBar2.add(jSeparator8);
+
+        btnKQ1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnKQ1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/goals-icon.png"))); // NOI18N
+        btnKQ1.setText("Kết quả");
+        btnKQ1.setFocusable(false);
+        btnKQ1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnKQ1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnKQ1);
+        jToolBar2.add(jSeparator9);
+
+        btnQL1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnQL1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_football_2_50px.png"))); // NOI18N
+        btnQL1.setText("Quản lý");
+        btnQL1.setFocusable(false);
+        btnQL1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnQL1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnQL1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnQL1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(180, 110, 194, 54);
+        jToolBar2.add(btnQL1);
+        jToolBar2.add(jSeparator10);
 
-        jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton4.setText("Bảng Xếp Hạng");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnTK1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnTK1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_user_menu_male_skin_type_7_48px.png"))); // NOI18N
+        btnTK1.setText("Tài khoản");
+        btnTK1.setFocusable(false);
+        btnTK1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTK1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnTK1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnTK1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton4);
-        jButton4.setBounds(180, 260, 194, 55);
+        jToolBar2.add(btnTK1);
+        jToolBar2.add(jSeparator2);
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jButton3.setText("Thoát");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton3);
-        jButton3.setBounds(420, 510, 128, 23);
+        btnExit1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnExit1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/icons8_Logout_48px.png"))); // NOI18N
+        btnExit1.setText("Exit");
+        btnExit1.setFocusable(false);
+        btnExit1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExit1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar2.add(btnExit1);
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jButton2.setText("Quản lý giải đấu");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(180, 400, 194, 63);
+        javax.swing.GroupLayout jDesktopPane1Layout = new javax.swing.GroupLayout(jDesktopPane1);
+        jDesktopPane1.setLayout(jDesktopPane1Layout);
+        jDesktopPane1Layout.setHorizontalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jDesktopPane1Layout.setVerticalGroup(
+            jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 435, Short.MAX_VALUE)
+        );
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/1.jpg"))); // NOI18N
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(0, 0, 560, 570);
+        jMenu1.setText("Menu");
+
+        jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
+        jMenuItem2.setText("Refresh");
+        jMenu1.add(jMenuItem2);
+
+        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        jMenuItem3.setText("Exit");
+        jMenu1.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Tool");
+
+        jMenuItem1.setText("Change");
+        jMenu2.add(jMenuItem1);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu7.setText("Thông tin");
+
+        jMenuItem4.setText("Cập nhật");
+        jMenu7.add(jMenuItem4);
+
+        jMenuBar1.add(jMenu7);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, 561, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 696, Short.MAX_VALUE))
+            .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jDesktopPane1))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnTK1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTK1ActionPerformed
         // TODO add your handling code here:
-        KQTDDrm ltd = new KQTDDrm(us);
-        ltd.setVisible(true);
-        this.dispose();
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+        if (frmTK == null || frmTK.isClosed()) {
+            frmTK = new FrmTaiKhoan(us);
+            jDesktopPane1.add(frmTK);
+            frmTK.setLocation(0,0);
+            frmTK.setVisible(true);
+        } else {
+            frmTK.setLocation(0,0);
+            frmTK.setVisible(true);
+        } 
+            
+    }//GEN-LAST:event_btnTK1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnQL1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQL1ActionPerformed
         // TODO add your handling code here:
-        boolean check = false ; 
-        
-        
-            if (us.getTinhtrang() == 1) {
-                        check = true;
-
+        boolean check = false ;       
+            if (us.getTinhtrang().equals("admin")) {
+                check = true;
             }
-        
-        if(check)
-        {
-        HomeFrm homeFrm = new HomeFrm();
-        homeFrm.setVisible(true);
-        this.dispose();
+        if(check) {
+            HomeFrm homeFrm = new HomeFrm();
+            homeFrm.setVisible(true);
+            this.dispose();
         }
         else {
-                JOptionPane.showMessageDialog(rootPane, "Ban không có quyền truy cập");
-            }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        DangNhapFrm dn = new DangNhapFrm();
-        dn.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        BXHFrm bxh = new BXHFrm(us);
-        bxh.setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jButton4ActionPerformed
+            JOptionPane.showMessageDialog(rootPane, "Ban không có quyền truy cập");
+        }
+    }//GEN-LAST:event_btnQL1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -194,11 +263,31 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton btnBXH1;
+    private javax.swing.JButton btnExit1;
+    private javax.swing.JButton btnKQ1;
+    private javax.swing.JButton btnQL1;
+    private javax.swing.JButton btnTK1;
+    private javax.swing.JDesktopPane jDesktopPane1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuBar jMenuBar2;
+    private javax.swing.JMenuBar jMenuBar3;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
+    private javax.swing.JToolBar.Separator jSeparator10;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator8;
+    private javax.swing.JToolBar.Separator jSeparator9;
+    private javax.swing.JToolBar jToolBar2;
     // End of variables declaration//GEN-END:variables
 }

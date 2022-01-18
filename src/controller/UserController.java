@@ -19,7 +19,7 @@ import model.User;
 
 /**
  *
- * @author Dell
+ * @author LamPham
  */
 public class UserController {
     public static List<User> findAll() {
@@ -27,7 +27,7 @@ public class UserController {
 
         Connection connection = null;
         Statement statement = null;
-        PreparedStatement prestatement = null;
+//        PreparedStatement prestatement = null;
 
         try {
             //Lấy tất cả danh sách sinh viên
@@ -42,7 +42,7 @@ public class UserController {
             while (resultSet.next()) {
                 User user;
                 user = new User(resultSet.getInt("id"),
-                        resultSet.getInt("tinhtrang"),
+                        resultSet.getString("tinhtrang"),
                         resultSet.getString("tk"),
                         resultSet.getString("email"),
                         resultSet.getString("mk"));
@@ -87,7 +87,7 @@ public class UserController {
             statement.setString(1, user.getTK());
             statement.setString(2, user.getEmail());
             statement.setString(3, user.getMK());
-            statement.setInt(4, user.getTinhtrang());
+            statement.setString(4, user.getTinhtrang());
 
             statement.execute();
 
@@ -127,7 +127,7 @@ public class UserController {
             statement.setString(1, user.getTK());
             statement.setString(2, user.getEmail());
             statement.setString(3, user.getMK());
-            statement.setInt(4, user.getTinhtrang());
+            statement.setString(4, user.getTinhtrang());
             statement.setInt(5, user.getId());
             statement.execute();
 
@@ -206,7 +206,7 @@ public class UserController {
             while (resultSet.next()) {
                 User user;
                 user = new User(resultSet.getInt("id"),
-                        resultSet.getInt("tinhtrang"),
+                        resultSet.getString("tinhtrang"),
                         resultSet.getString("tk"),
                         resultSet.getString("email"),
                         resultSet.getString("mk"));
