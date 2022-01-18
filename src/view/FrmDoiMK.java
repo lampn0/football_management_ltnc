@@ -18,6 +18,7 @@ public class FrmDoiMK extends javax.swing.JFrame {
      */
     public FrmDoiMK() {
         initComponents();
+        this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
     }
 

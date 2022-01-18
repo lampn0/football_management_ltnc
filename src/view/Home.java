@@ -16,6 +16,7 @@ public class Home extends javax.swing.JFrame {
     FrmKQTD frmKQ;
     FrmTaiKhoan frmTK;
     FrmBXH frmBXH;
+    FrmLichDau frmLD;
     /**
      * Creates new form Home
      * @param user
@@ -51,6 +52,8 @@ public class Home extends javax.swing.JFrame {
         btnQL = new javax.swing.JButton();
         jSeparator10 = new javax.swing.JToolBar.Separator();
         btnLichDau = new javax.swing.JButton();
+        jSeparator3 = new javax.swing.JToolBar.Separator();
+        btnLD = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         btnTK = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
@@ -141,6 +144,20 @@ public class Home extends javax.swing.JFrame {
             }
         });
         jToolBar2.add(btnLichDau);
+        jToolBar2.add(jSeparator3);
+
+        btnLD.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnLD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Dice-icon.png"))); // NOI18N
+        btnLD.setText("Dự đoán");
+        btnLD.setFocusable(false);
+        btnLD.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnLD.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnLD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLDActionPerformed(evt);
+            }
+        });
+        jToolBar2.add(btnLD);
         jToolBar2.add(jSeparator1);
 
         btnTK.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -215,7 +232,7 @@ public class Home extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jToolBar2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 630, Short.MAX_VALUE))
+                .addGap(0, 562, Short.MAX_VALUE))
             .addComponent(jDesktopPane1)
         );
         layout.setVerticalGroup(
@@ -260,9 +277,15 @@ public class Home extends javax.swing.JFrame {
 
     private void btnLichDauActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLichDauActionPerformed
         // TODO add your handling code here:
-        LichThiDau lichdau = new LichThiDau(us);
-        lichdau.setVisible(true);
-        this.dispose();
+        if (frmLD == null || frmLD.isClosed()) {
+            frmLD = new FrmLichDau(us);
+            jDesktopPane1.add(frmLD);
+            frmLD.setLocation(0,0);
+            frmLD.setVisible(true);
+        } else {
+            frmLD.setLocation(0,0);
+            frmLD.setVisible(true);
+        } 
     }//GEN-LAST:event_btnLichDauActionPerformed
 
     private void btnKQActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKQActionPerformed
@@ -297,6 +320,19 @@ public class Home extends javax.swing.JFrame {
             frmBXH.setVisible(true);
         } 
     }//GEN-LAST:event_btnBXHActionPerformed
+
+    private void btnLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLDActionPerformed
+        // TODO add your handling code here:
+        if (frmLD == null || frmLD.isClosed()) {
+            frmLD = new FrmLichDau(us);
+            jDesktopPane1.add(frmLD);
+            frmLD.setLocation(0,0);
+            frmLD.setVisible(true);
+        } else {
+            frmLD.setLocation(0,0);
+            frmLD.setVisible(true);
+        } 
+    }//GEN-LAST:event_btnLDActionPerformed
 
     /**
      * @param args the command line arguments
@@ -338,6 +374,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton btnBXH;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnKQ;
+    private javax.swing.JButton btnLD;
     private javax.swing.JButton btnLichDau;
     private javax.swing.JButton btnQL;
     private javax.swing.JButton btnTK;
@@ -360,6 +397,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JToolBar.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator8;
     private javax.swing.JToolBar.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar2;

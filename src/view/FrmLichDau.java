@@ -4,17 +4,45 @@
  */
 package view;
 
+import controller.LichThiDauController;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
+import model.TranDau;
+import model.User;
+
 /**
  *
  * @author lampn
  */
 public class FrmLichDau extends javax.swing.JInternalFrame {
-
+    List<TranDau> LichThiDauList = new ArrayList<>();
+    User us;
+    DefaultTableModel tableLichThiDauModel;
+    DefaultTableModel tableLichCuaToiModel;
     /**
      * Creates new form FrmLichDau
      */
-    public FrmLichDau() {
+    public FrmLichDau(User us) {
         initComponents();
+        this.us = us ; 
+        tableLichThiDauModel = (DefaultTableModel) jTable1.getModel();
+        tableLichCuaToiModel = (DefaultTableModel) jTable2.getModel();
+        showLichThiDau();
+    }
+    
+    private void showLichThiDau() {
+        
+        LichThiDauList = LichThiDauController.findAll();
+        // Đưa số Row của table về 0
+        tableLichThiDauModel.setRowCount(0);
+
+        LichThiDauList.forEach(lichthidau -> {
+            tableLichThiDauModel.addRow(new Object[]{lichthidau.getThoigian(),
+                lichthidau.getTendoi1(),
+                lichthidau.getTendoi2(),
+                lichthidau.getSandau()});
+        });
     }
 
     /**
@@ -31,7 +59,10 @@ public class FrmLichDau extends javax.swing.JInternalFrame {
         time = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        time1 = new javax.swing.JLabel();
+        btnDK = new javax.swing.JButton();
+        btnTimDT = new javax.swing.JButton();
+        btnQL = new javax.swing.JButton();
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -61,10 +92,26 @@ public class FrmLichDau extends javax.swing.JInternalFrame {
         ));
         jScrollPane2.setViewportView(jTable2);
 
-        jButton1.setText("Quay lại");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        time1.setText("Lịch của tôi");
+
+        btnDK.setText("Đăng kí lịch");
+        btnDK.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnDKActionPerformed(evt);
+            }
+        });
+
+        btnTimDT.setText("Tìm đối thủ");
+        btnTimDT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTimDTActionPerformed(evt);
+            }
+        });
+
+        btnQL.setText("Quay lại");
+        btnQL.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnQLActionPerformed(evt);
             }
         });
 
@@ -72,55 +119,81 @@ public class FrmLichDau extends javax.swing.JInternalFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(949, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGap(0, 1068, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(layout.createSequentialGroup()
-                            .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(876, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 720, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnQL, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(layout.createSequentialGroup()
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane1)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1048, Short.MAX_VALUE))
-                            .addContainerGap()))))
+                                .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, 182, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 647, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(btnDK, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnTimDT, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addContainerGap()))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButton1)
-                .addContainerGap(362, Short.MAX_VALUE))
+            .addGap(0, 400, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
-                    .addGap(46, 46, 46)
+                    .addGap(18, 18, 18)
+                    .addComponent(btnQL)
+                    .addGap(12, 12, 12)
                     .addComponent(time, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(43, 43, 43)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(time1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGap(56, 56, 56)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnDK)
+                        .addComponent(btnTimDT))
+                    .addContainerGap(18, Short.MAX_VALUE)))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void btnDKActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDKActionPerformed
         // TODO add your handling code here:
+        DangKiLich dangki = new DangKiLich(us);
+        dangki.setVisible(true);
+    }//GEN-LAST:event_btnDKActionPerformed
+
+    private void btnTimDTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimDTActionPerformed
+        // TODO add your handling code here:
+        TimDoiThu timdoithu = new TimDoiThu(us);
+        timdoithu.setVisible(true);
+    }//GEN-LAST:event_btnTimDTActionPerformed
+
+    private void btnQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQLActionPerformed
+        // TODO add your handling code here:
+        Home home = new Home(us);
+        home.setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_btnQLActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btnDK;
+    private javax.swing.JButton btnQL;
+    private javax.swing.JButton btnTimDT;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JLabel time;
+    private javax.swing.JLabel time1;
     // End of variables declaration//GEN-END:variables
 }
