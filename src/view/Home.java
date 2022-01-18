@@ -12,7 +12,7 @@ import model.User;
  * @author LamPham
  */
 public class Home extends javax.swing.JFrame {
-    User us ;
+    public static User us ;
     FrmKQTD frmKQ;
     FrmTaiKhoan frmTK;
     FrmBXH frmBXH;
