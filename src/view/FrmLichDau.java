@@ -179,8 +179,6 @@ public class FrmLichDau extends javax.swing.JInternalFrame {
 
     private void btnQLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnQLActionPerformed
         // TODO add your handling code here:
-        Home home = new Home(us);
-        home.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_btnQLActionPerformed
 

@@ -17,6 +17,7 @@ public class Home extends javax.swing.JFrame {
     FrmTaiKhoan frmTK;
     FrmBXH frmBXH;
     FrmLichDau frmLD;
+    FrmDuDoan frmDuDoan;
     /**
      * Creates new form Home
      * @param user
@@ -53,7 +54,7 @@ public class Home extends javax.swing.JFrame {
         jSeparator10 = new javax.swing.JToolBar.Separator();
         btnLichDau = new javax.swing.JButton();
         jSeparator3 = new javax.swing.JToolBar.Separator();
-        btnLD = new javax.swing.JButton();
+        btnDuDoan = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JToolBar.Separator();
         btnTK = new javax.swing.JButton();
         jSeparator2 = new javax.swing.JToolBar.Separator();
@@ -146,18 +147,18 @@ public class Home extends javax.swing.JFrame {
         jToolBar2.add(btnLichDau);
         jToolBar2.add(jSeparator3);
 
-        btnLD.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        btnLD.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Dice-icon.png"))); // NOI18N
-        btnLD.setText("Dự đoán");
-        btnLD.setFocusable(false);
-        btnLD.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btnLD.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btnLD.addActionListener(new java.awt.event.ActionListener() {
+        btnDuDoan.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnDuDoan.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Dice-icon.png"))); // NOI18N
+        btnDuDoan.setText("Dự đoán");
+        btnDuDoan.setFocusable(false);
+        btnDuDoan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnDuDoan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btnDuDoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnLDActionPerformed(evt);
+                btnDuDoanActionPerformed(evt);
             }
         });
-        jToolBar2.add(btnLD);
+        jToolBar2.add(btnDuDoan);
         jToolBar2.add(jSeparator1);
 
         btnTK.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -202,10 +203,20 @@ public class Home extends javax.swing.JFrame {
 
         jMenuItem2.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F5, 0));
         jMenuItem2.setText("Refresh");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu.add(jMenuItem2);
 
         jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
         jMenuItem3.setText("Exit");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu.add(jMenuItem3);
 
         jMenuBar1.add(jMenu);
@@ -220,6 +231,11 @@ public class Home extends javax.swing.JFrame {
         jMenu7.setText("Thông tin");
 
         jMenuItem4.setText("Cập nhật");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu7.add(jMenuItem4);
 
         jMenuBar1.add(jMenu7);
@@ -321,18 +337,35 @@ public class Home extends javax.swing.JFrame {
         } 
     }//GEN-LAST:event_btnBXHActionPerformed
 
-    private void btnLDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLDActionPerformed
+    private void btnDuDoanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDuDoanActionPerformed
         // TODO add your handling code here:
-        if (frmLD == null || frmLD.isClosed()) {
-            frmLD = new FrmLichDau(us);
-            jDesktopPane1.add(frmLD);
-            frmLD.setLocation(0,0);
-            frmLD.setVisible(true);
+        if (frmDuDoan == null || frmDuDoan.isClosed()) {
+            frmDuDoan = new FrmDuDoan(us);
+            jDesktopPane1.add(frmDuDoan);
+            frmDuDoan.setLocation(0,0);
+            frmDuDoan.setVisible(true);
         } else {
-            frmLD.setLocation(0,0);
-            frmLD.setVisible(true);
+            frmDuDoan.setLocation(0,0);
+            frmDuDoan.setVisible(true);
         } 
-    }//GEN-LAST:event_btnLDActionPerformed
+    }//GEN-LAST:event_btnDuDoanActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        Home hi = new Home(us);
+        hi.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+        JOptionPane.showMessageDialog(rootPane, "Phiên bản hiện tại 0.1 mới nhất");
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -372,9 +405,9 @@ public class Home extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBXH;
+    private javax.swing.JButton btnDuDoan;
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnKQ;
-    private javax.swing.JButton btnLD;
     private javax.swing.JButton btnLichDau;
     private javax.swing.JButton btnQL;
     private javax.swing.JButton btnTK;
