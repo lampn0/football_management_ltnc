@@ -27,6 +27,19 @@ public class Home extends javax.swing.JFrame {
         us = user ; 
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+        showBXH(us);
+    }
+    
+    private void showBXH(User us) {
+        if (frmBXH == null || frmBXH.isClosed()) {
+            frmBXH = new FrmBXH(us);
+            jDesktopPane1.add(frmBXH);
+            frmBXH.setLocation(0,0);
+            frmBXH.setVisible(true);
+        } else {
+            frmBXH.setLocation(0,0);
+            frmBXH.setVisible(true);
+        } 
     }
 
     /**

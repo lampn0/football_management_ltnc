@@ -59,9 +59,9 @@ public class HomeFrm extends javax.swing.JFrame {
 
     public HomeFrm() {
         initComponents();
-
+        
         this.setLocationRelativeTo(null);
-
+        this.setExtendedState(HomeFrm.MAXIMIZED_BOTH);
         tableCLBModel = (DefaultTableModel) jtbCLB.getModel();
         tableCauThuModel = (DefaultTableModel) jtbCauThu.getModel();
         tableKQTDModel = (DefaultTableModel) jtbKQTranDau.getModel();
@@ -740,6 +740,7 @@ public class HomeFrm extends javax.swing.JFrame {
         jlbTGThiDau1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jlbTGThiDau1.setText("TRẬN ĐẤU");
 
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLabel3.setText("Cầu thủ ghi bản");
 
         cbCTCLB1.addActionListener(new java.awt.event.ActionListener() {
@@ -771,7 +772,7 @@ public class HomeFrm extends javax.swing.JFrame {
                                     .addGroup(jPanel9Layout.createSequentialGroup()
                                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                             .addComponent(jlbCLB1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addComponent(jLabel3))
                                         .addGap(18, 18, 18)
                                         .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(cbCLB1, 0, 137, Short.MAX_VALUE)
@@ -1192,7 +1193,7 @@ public class HomeFrm extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
-                .addContainerGap(599, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -1526,16 +1527,11 @@ public class HomeFrm extends javax.swing.JFrame {
                 bxh.getSotran(), bxh.getSotrangthang(), bxh.getSobanthua(), 
                 bxh.getSotranhoa(), bxh.getSobanthang(), bxh.getSobanthua(), bxh.getHieuso(), bxh.getDiem()});
                 }
+            cbTranDau.removeItemAt(cbTranDau.getSelectedIndex());
         });
-            
-            
             ShowBXH();
         }
-
         ShowKQTD();
-//        BXHController.Delete();
-        
-        //ShowBXH();
     }//GEN-LAST:event_btnSaveTranDauActionPerformed
 
     private void jtfVongFindActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jtfVongFindActionPerformed
@@ -1566,17 +1562,16 @@ public class HomeFrm extends javax.swing.JFrame {
         String selectedItem = (String) cbTenCLB.getSelectedItem();
         System.out.println(selectedItem);
  
-        CauthuList.forEach(cauthu -> {
-            
-        if(selectedItem.equals(cauthu.getTendoi())) 
-        {
-            
-            tableCauThuModel.addRow(new Object[]{tableCauThuModel.getRowCount() + 1, cauthu.getTendoi(),
-                cauthu.getTencauthu(), cauthu.getNgaysinh(), cauthu.getSoao(), cauthu.getVitri()});
+        if (selectedItem.equals("")) {
+            return;
+        } else {
+            CauthuList.forEach(cauthu -> {
+                if(selectedItem.equals(cauthu.getTendoi())) {
+                tableCauThuModel.addRow(new Object[]{tableCauThuModel.getRowCount() + 1, cauthu.getTendoi(),
+                    cauthu.getTencauthu(), cauthu.getNgaysinh(), cauthu.getSoao(), cauthu.getVitri()});
+                }
+            });
         }
-            
-        });
-        
     }//GEN-LAST:event_cbTenCLBActionPerformed
 
     private void btnDeleteCauThuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteCauThuActionPerformed
@@ -2049,6 +2044,9 @@ public class HomeFrm extends javax.swing.JFrame {
         KQTDList.forEach(kqtd -> {
             cbTranDau.addItem(kqtd.getTentran());
         });
+        for(int i = 0 ; i < jtbKQTranDau.getRowCount() ; i++) {
+            cbTranDau.removeItemAt(0);
+        }
     }
     
     private void ShowComboVD() {

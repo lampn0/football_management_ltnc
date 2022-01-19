@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.26, for Win64 (x86_64)
 --
--- Host: localhost    Database: match
+-- Host: 127.0.0.1    Database: match
 -- ------------------------------------------------------
 -- Server version	8.0.26
 
@@ -47,7 +47,7 @@ CREATE TABLE `bxh` (
 
 LOCK TABLES `bxh` WRITE;
 /*!40000 ALTER TABLE `bxh` DISABLE KEYS */;
-INSERT INTO `bxh` VALUES (3,1,78,1,0,1,0,2,3,-1,0),(1,1,75,1,1,0,0,3,2,1,3),(4,1,76,1,0,1,0,2,3,-1,0),(1,2,75,2,2,0,0,7,3,4,6),(4,2,78,2,0,2,0,3,7,-4,0),(3,2,76,2,0,1,1,5,6,-1,1),(1,3,75,3,3,0,0,11,5,6,9),(4,3,76,3,0,2,1,6,11,-5,1),(3,3,78,3,1,2,0,8,8,0,3),(2,1,77,1,1,0,0,3,2,1,3),(2,2,77,2,1,0,1,6,5,1,4),(2,3,77,3,1,1,1,8,9,-1,4);
+INSERT INTO `bxh` VALUES (2,1,75,1,1,0,0,2,1,1,3),(6,1,76,1,0,1,0,1,2,-1,0),(7,1,81,1,0,1,0,2,3,-1,0),(3,1,85,1,1,0,0,3,2,1,3),(10,1,83,1,0,1,0,1,3,-2,0),(1,1,84,1,1,0,0,3,1,2,3),(4,1,78,1,1,0,0,3,2,1,3),(8,1,87,1,0,1,0,2,3,-1,0),(5,1,77,1,1,0,0,4,3,1,3),(9,1,86,1,0,1,0,3,4,-1,0),(1,2,75,2,2,0,0,5,2,3,6),(7,2,85,2,1,1,0,4,5,-1,3),(9,2,76,2,0,2,0,2,4,-2,0),(5,2,81,2,1,1,0,4,4,0,3),(2,2,84,2,1,0,1,4,2,2,4),(8,2,87,2,0,1,1,3,4,-1,1),(10,2,83,2,0,2,0,3,6,-3,0),(6,2,86,2,1,1,0,6,6,0,3),(3,2,77,2,1,0,1,7,6,1,4),(4,2,78,2,1,0,1,6,5,1,4),(4,3,75,3,2,1,0,6,5,1,6),(3,3,81,3,2,1,0,7,5,2,6),(6,3,76,3,1,2,0,5,5,0,3),(9,3,85,3,1,2,0,5,8,-3,3),(1,3,78,3,2,0,1,10,8,2,7),(5,3,84,3,1,1,1,7,6,1,4),(2,3,77,3,2,0,1,9,7,2,7),(10,3,87,3,0,2,1,4,6,-2,1),(8,3,83,3,1,2,0,5,7,-2,3),(7,3,86,3,1,2,0,7,8,-1,3),(1,4,75,4,3,1,0,9,6,3,9),(2,4,87,4,0,3,1,5,9,-4,1);
 /*!40000 ALTER TABLE `bxh` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -65,7 +65,7 @@ CREATE TABLE `clb` (
   `HLV` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `socauthu` int NOT NULL,
   PRIMARY KEY (`madoi`)
-) ENGINE=InnoDB AUTO_INCREMENT=89 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=92 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -74,7 +74,7 @@ CREATE TABLE `clb` (
 
 LOCK TABLES `clb` WRITE;
 /*!40000 ALTER TABLE `clb` DISABLE KEYS */;
-INSERT INTO `clb` VALUES (75,'FC Anh Sơn','Kiều Đình Long','Nguyễn Đình Hoàng',12),(76,'FC Diễn Châu','Nguyễn Hữu Hiếu','Trần Quang Hải',7),(77,'FC TP Vinh','Trần Văn Mạnh','Phạm Văn Đức',7),(78,'FC Thanh Chương','Nguyễn Minh Bắc','Nguyễn Công Hùng',7),(81,'FC Đồng Tâm','Nguyễn Đức Đạt','Nguyễn Đức Linh',7),(83,'FC Đức Mạnh','Hà Văn Thái','Hà Mạnh Công',7),(84,'FC Đức Đồng','Nguyễn Văn Minh','Nguyễn Đức Anh',7),(85,'FC Diễn Hạnh','Nguyễn Văn Tài','Đinh Văn Hảo',9),(86,'FC Thanh Tri','Mã Văn Tài','Dương Văn Quá',7),(87,'FC Lâm ĐZ','Lâm cris','Lâm real',7);
+INSERT INTO `clb` VALUES (75,'FC Anh Sơn','Kiều Đình Lon','Nguyễn Đình Hoàng',12),(76,'FC Diễn Châu','Nguyễn Hữu Hiếu','Trần Quang Hải',7),(77,'FC TP Vinh','Trần Văn Mạnh','Phạm Văn Đức',7),(78,'FC Thanh Chương','Nguyễn Minh Bắc','Nguyễn Công Hùng',7),(81,'FC Đồng Tâm','Nguyễn Đức Đạt','Nguyễn Đức Linh',7),(83,'FC Đức Mạnh','Hà Văn Thái','Hà Mạnh Công',7),(84,'FC Đức Đồng','Nguyễn Văn Minh','Nguyễn Đức Anh',7),(85,'FC Diễn Hạnh','Nguyễn Văn Tài','Đinh Văn Hảo',9),(86,'FC Thanh Tri','Mã Văn Tài','Dương Văn Quá',7),(87,'FC Lâm ĐZ','Lâm cris','Lâm real',7);
 /*!40000 ALTER TABLE `clb` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -108,7 +108,7 @@ CREATE TABLE `kqtd` (
 
 LOCK TABLES `kqtd` WRITE;
 /*!40000 ALTER TABLE `kqtd` DISABLE KEYS */;
-INSERT INTO `kqtd` VALUES (2,78,77,'Thanh Chương','2021-12-01',2,3),(3,75,78,'Anh Sơn','2001-12-02',4,1),(4,76,77,'Diễn Châu','2021-12-02',3,3),(5,75,77,'Anh Sơn','2021-12-03',4,2),(1,75,76,'Anh Sơn','2021-12-01',3,2),(6,76,78,'Diễn Châu','2021-12-03',1,5);
+INSERT INTO `kqtd` VALUES (1,75,76,'Anh Sơn','2021-12-01',2,1),(2,85,81,'Diễn Hạnh','2021-12-01',3,2),(3,84,83,'Đức Đồng','2021-12-01',3,1),(4,87,78,'Lâm ĐZ','2021-12-01',2,3),(5,86,77,'Thanh Trì','2021-12-01',3,4),(6,75,85,'Anh Sơn','2021-12-02',3,1),(7,76,81,'Diễn Châu','2021-12-02',1,2),(8,84,87,'Đức Đồng','2021-12-02',1,1),(9,83,86,'Đức Mạnh','2021-12-02',2,3),(10,78,77,'Thanh Chương','2021-12-02',3,3),(11,75,81,'Anh Sơn','2021-12-03',1,3),(12,76,85,'Diễn Châu','2021-12-03',3,1),(13,84,78,'Đức Đồng','2021-12-03',3,4),(14,87,77,'Lâm','2021-12-03',1,2),(15,86,83,'Thanh Trì','2021-12-03',1,2),(16,75,87,'Anh Sơn ','2021-12-04',3,1);
 /*!40000 ALTER TABLE `kqtd` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -135,7 +135,7 @@ CREATE TABLE `taikhoan` (
 
 LOCK TABLES `taikhoan` WRITE;
 /*!40000 ALTER TABLE `taikhoan` DISABLE KEYS */;
-INSERT INTO `taikhoan` VALUES (1,'lampn0','lampn0@gmail.com','admin123','admin'),(5,'dinhcanh','Canhr101802@gmail.com','123456','user'),(8,'user1','user@gmail.com','user123','admin'),(9,'admin','admin','admin','admin'),(10,'admin1','admin1','lampn0@','admin'),(11,'lamchiai','lam','lamchiai','Người dùng');
+INSERT INTO `taikhoan` VALUES (1,'lampn0','lampn0@gmail.com','admin123','admin'),(5,'dinhcanh','Canhr101802@gmail.com','12345','user'),(8,'user1','user@gmail.com','user123','admin'),(9,'admin','admin','admin','admin'),(10,'admin1','admin1','lampn0@','admin'),(11,'lamchiai','lam','lamchiai','Người dùng');
 /*!40000 ALTER TABLE `taikhoan` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -183,7 +183,7 @@ CREATE TABLE `trandau` (
   PRIMARY KEY (`matran`),
   KEY `mavong` (`mavong`),
   CONSTRAINT `trandau_ibfk_1` FOREIGN KEY (`mavong`) REFERENCES `vongdau` (`mavongdau`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -192,7 +192,7 @@ CREATE TABLE `trandau` (
 
 LOCK TABLES `trandau` WRITE;
 /*!40000 ALTER TABLE `trandau` DISABLE KEYS */;
-INSERT INTO `trandau` VALUES (1,1,1),(2,1,2),(3,2,3),(4,2,4),(5,3,5),(6,3,6),(7,4,7),(8,4,8),(9,5,9),(10,5,10),(11,6,11),(12,6,12),(13,7,13),(14,7,14),(15,8,15),(16,8,16),(17,9,17),(18,9,18),(19,10,19),(20,10,20),(21,11,21),(22,11,22);
+INSERT INTO `trandau` VALUES (1,1,1),(2,1,2),(3,1,3),(4,1,4),(5,1,5),(6,2,6),(7,2,7),(8,2,8),(9,2,9),(10,2,10),(11,3,11),(12,3,12),(13,3,13),(14,3,14),(15,3,15),(16,4,16),(17,4,17),(18,4,18),(19,4,19),(20,4,20),(21,5,21),(22,5,22),(23,5,23),(24,5,24),(25,5,25),(26,6,26),(27,6,27),(28,6,28),(29,6,29),(30,6,30),(31,7,31),(32,7,32),(33,7,33),(34,7,34),(35,7,35),(36,8,36),(37,8,37),(38,8,38),(39,8,39),(40,8,40),(41,9,41),(42,9,42),(43,9,43),(44,9,44),(45,9,45);
 /*!40000 ALTER TABLE `trandau` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -207,7 +207,7 @@ CREATE TABLE `vongdau` (
   `mavongdau` int NOT NULL AUTO_INCREMENT,
   `tenvongdau` int NOT NULL,
   PRIMARY KEY (`mavongdau`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -216,7 +216,7 @@ CREATE TABLE `vongdau` (
 
 LOCK TABLES `vongdau` WRITE;
 /*!40000 ALTER TABLE `vongdau` DISABLE KEYS */;
-INSERT INTO `vongdau` VALUES (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,12);
+INSERT INTO `vongdau` VALUES (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10),(11,11),(12,12),(13,13),(14,14);
 /*!40000 ALTER TABLE `vongdau` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -229,4 +229,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-01-18 22:06:50
+-- Dump completed on 2022-01-19  9:25:38
