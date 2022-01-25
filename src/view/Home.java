@@ -300,7 +300,7 @@ public class Home extends javax.swing.JFrame {
             this.dispose();
         }
         else {
-            JOptionPane.showMessageDialog(rootPane, "Ban không có quyền truy cập");
+            JOptionPane.showMessageDialog(rootPane, "Ban không có quyền truy cập", "Cảnh báo", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_btnQLActionPerformed
 

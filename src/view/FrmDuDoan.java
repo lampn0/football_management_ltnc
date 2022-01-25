@@ -59,7 +59,9 @@ public class FrmDuDoan extends javax.swing.JInternalFrame {
         cbCLBdd1 = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jtfPredict = new javax.swing.JTextField();
+        btnThoat = new javax.swing.JButton();
 
+        cbCLBdd2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         cbCLBdd2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbCLBdd2ActionPerformed(evt);
@@ -70,12 +72,14 @@ public class FrmDuDoan extends javax.swing.JInternalFrame {
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icon/Dice-icon.png"))); // NOI18N
         jLabel1.setText("DỰ ĐOÁN");
 
+        cbCLBdd1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         cbCLBdd1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cbCLBdd1ActionPerformed(evt);
             }
         });
 
+        jButton1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jButton1.setText("Dự đoán");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -83,9 +87,18 @@ public class FrmDuDoan extends javax.swing.JInternalFrame {
             }
         });
 
+        jtfPredict.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jtfPredict.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfPredictActionPerformed(evt);
+            }
+        });
+
+        btnThoat.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        btnThoat.setText("Thoát");
+        btnThoat.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnThoatActionPerformed(evt);
             }
         });
 
@@ -96,19 +109,25 @@ public class FrmDuDoan extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(231, 231, 231)
-                        .addComponent(cbCLBdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jtfPredict, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54)
-                                .addComponent(cbCLBdd2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(450, 450, 450)
-                        .addComponent(jLabel1)))
-                .addContainerGap(234, Short.MAX_VALUE))
+                                .addGap(231, 231, 231)
+                                .addComponent(cbCLBdd1, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(jtfPredict, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(54, 54, 54)
+                                        .addComponent(cbCLBdd2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(450, 450, 450)
+                                .addComponent(jLabel1)))
+                        .addGap(0, 224, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,7 +141,9 @@ public class FrmDuDoan extends javax.swing.JInternalFrame {
                     .addComponent(jtfPredict, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(134, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                .addComponent(btnThoat, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -159,8 +180,14 @@ public class FrmDuDoan extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jtfPredictActionPerformed
 
+    private void btnThoatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThoatActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_btnThoatActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnThoat;
     private javax.swing.JComboBox<String> cbCLBdd1;
     private javax.swing.JComboBox<String> cbCLBdd2;
     private javax.swing.JButton jButton1;

@@ -5,16 +5,26 @@
 package view;
 
 import controller.UserController;
+import java.io.UnsupportedEncodingException;
+import java.util.Date;
 import java.util.List;
+import javax.mail.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import model.User;
+import static view.XacThucMail.checkCode;
 
 /**
  *
  * @author LamPham
  */
 public class DangKyFrm extends javax.swing.JFrame {
-
+    public static String codeCf = String.valueOf(Math.round((Math.random()*9000)+1000));
+    public static User user;
     /**
      * Creates new form DangKyFrm
      */
@@ -22,6 +32,42 @@ public class DangKyFrm extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         this.setLocationRelativeTo(null);
+    }
+    
+    public static void checkMail(String em) throws MessagingException, UnsupportedEncodingException{
+        final String fromEmail = "footballmanagementsys@gmail.com";
+        // Mat khai email cua ban
+        final String password = "lamlam@123";
+        // dia chi email nguoi nhan
+        final String toEmail = em;
+        final String subject = "Confirm Email";
+        final String body = codeCf;
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com"); //SMTP Host
+        props.put("mail.smtp.port", "587"); //TLS Port
+        props.put("mail.smtp.auth", "true"); //enable authentication
+        props.put("mail.smtp.starttls.enable", "true"); //enable STARTTLS
+        Authenticator auth;
+        auth = new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(fromEmail, password);
+            }
+        };
+        Session session = Session.getInstance(props, auth);
+        MimeMessage msg = new MimeMessage(session);
+        //set message headers
+        msg.addHeader("Content-type", "text/HTML; charset=UTF-8");
+        msg.addHeader("format", "flowed");
+        msg.addHeader("Content-Transfer-Encoding", "8bit");
+        msg.setFrom(new InternetAddress(fromEmail, "NoReply-JD"));
+        msg.setReplyTo(InternetAddress.parse(fromEmail, false));
+        msg.setSubject(subject, "UTF-8");
+        msg.setText(body, "UTF-8");
+        msg.setSentDate(new Date());
+        msg.setRecipients(Message.RecipientType.TO, InternetAddress.parse(toEmail, false));
+        Transport.send(msg);
+        System.out.println("Gui mail thanh cong");
     }
 
     /**
@@ -247,15 +293,19 @@ public class DangKyFrm extends javax.swing.JFrame {
         }
 
         if (isOK) {
-            User user = new User(tinhtrang, tk, email, mk);
-            JOptionPane.showMessageDialog(rootPane, "Bạn đã thêm thành công tài khoản");
-            UserController.insert(user);
+            user = new User(tinhtrang, tk, email, mk);
+            try {
+                checkMail(email);
+                XacThucMail home = new XacThucMail();
+                home.setTitle("Xác thực tài khoản");
+                home.setVisible(true);
+                this.dispose();
 
-            cbTinhTrang.setSelectedIndex(0);
-            jtfTK.setText("");
-            jtfEmail.setText("");
-            jwfMK.setText("");
-            jwfConfirmMK.setText("");
+            } catch (MessagingException ex) {
+                Logger.getLogger(DangKyFrm.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UnsupportedEncodingException ex) {
+                Logger.getLogger(DangKyFrm.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
    

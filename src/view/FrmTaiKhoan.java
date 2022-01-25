@@ -45,7 +45,7 @@ public class FrmTaiKhoan extends javax.swing.JInternalFrame {
     public void EnableEdit() {
         jtfTK.setEnabled(true);
         jtfEmail.setEnabled(true);
-        jcbTinhTrang.setEnabled(true);
+        jcbTinhTrang.setEnabled(false);
     }
 
     /**

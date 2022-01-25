@@ -146,7 +146,7 @@ public class HomeFrm extends javax.swing.JFrame {
 
         UserList.forEach(user -> {
             tableUserModel.addRow(new Object[]{tableUserModel.getRowCount() + 1, user.getTK(),
-                user.getEmail(), user.getMK(), user.getTinhtrang()});
+                user.getEmail(), user.getTinhtrang()});
         });
     }
     /**
@@ -435,7 +435,7 @@ public class HomeFrm extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 186, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 190, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Câu lạc bộ", jPanel1);
@@ -640,7 +640,7 @@ public class HomeFrm extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 161, Short.MAX_VALUE))
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Cầu thủ", jPanel6);
@@ -880,7 +880,7 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, 426, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 127, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Kết quả trận đấu", jPanel8);
@@ -949,7 +949,7 @@ public class HomeFrm extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jtfBXHFind, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
@@ -1097,7 +1097,7 @@ public class HomeFrm extends javax.swing.JFrame {
                         .addComponent(btnEditUser)
                         .addGap(75, 75, 75)
                         .addComponent(btnDeleteUser)))
-                .addContainerGap(434, Short.MAX_VALUE))
+                .addContainerGap(452, Short.MAX_VALUE))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1166,7 +1166,7 @@ public class HomeFrm extends javax.swing.JFrame {
             .addGroup(jPanel11Layout.createSequentialGroup()
                 .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 144, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Thông tin tài khoản", jPanel11);
@@ -1189,11 +1189,13 @@ public class HomeFrm extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jButton1)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 637, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
