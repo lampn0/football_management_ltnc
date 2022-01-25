@@ -104,6 +104,9 @@ public class XacThucMail extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(rootPane, "Email chưa được xác thực");
         }
+        DangNhapFrm dangNhapFrm = new DangNhapFrm();
+        dangNhapFrm.setTitle("Football League Management");
+        dangNhapFrm.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
